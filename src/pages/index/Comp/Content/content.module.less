@@ -1,17 +1,50 @@
-.content{
+.content {
     background: white;
     padding: 30px 30px;
     display: flex;
-    justify-content:space-between;
-    gap:20px;
+    justify-content: space-between;
     gap: 20px;
-    .left{
-        background: red;
+    font-family: var(--font-family-basic);
+    font-weight: lighter;
+
+    .left {
+        background: var(--dark-blue);
         color: white;
-        min-width: 2%;
+        min-width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        padding: 20px;
+        h3{
+            font-size: 36px;
+            margin: 0;
+            font-weight: 900;
+            color: var(--light-blue);
+            text-align: left;
+        }
+        span{
+            font-size: 16px;
+            margin-top: 20px;
+        }
     }
-    .right{
+
+    .right {
         flex: 1;
-        background: black;
+        display: flex;
+        gap: 10px;
+
+        img {
+            // 1. 完美均分 4 列（减去 3 个 10px 间距后均分 4 份）
+            width: calc((100% - 30px) / 4);
+            
+            // 2. 设定严格的 1:4 长宽比（宽 1 : 高 4）
+            aspect-ratio: 1 / 2;
+            
+            // 3. 核心：不拉伸缩放，保持原图比例并自动裁剪
+            object-fit: cover;
+            
+            // 4. 核心：裁剪时定死左侧，从左边开始保留，切掉右边多余的部分
+            object-position: left center; 
+        }
     }
 }

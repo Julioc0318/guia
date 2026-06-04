@@ -1,10 +1,11 @@
 .banner {
     padding: 0px 30px;
     position: relative;
-    background: linear-gradient(to bottom, #080A23; 0%, #080A23; 80%, #ffffff 80%, #ffffff 100%);
+    background: linear-gradient(to bottom, var(--dark-blue); 0%, var(--dark-blue); 80%, #ffffff 80%, #ffffff 100%);
 
     .bannerItem {
         position: relative;
+        font-family: var(--font-family-banner);
 
         img {
             width: 100%;
@@ -14,27 +15,30 @@
             // 2. 核心：如果原图比例不是 5:3，自动居中裁剪，绝不拉伸变形
             object-fit: cover;
 
-            filter: brightness(0.6);
+            filter: brightness(0.4);
         }
 
         .bannerContent {
             width: 40%;
             position: absolute;
             z-index: 1;
-            color: red;
-            // background: white;
             left: 30%;
             top: 50%;
             transform: translate(-50%, -50%);
             text-align: left;
             color: #fff;
+
             h3 {
                 font-size: 36px;
                 margin: 0;
                 font-weight: 900;
+                white-space: nowrap;
             }
-            p{
+
+            p {
                 font-weight: lighter;
+                font-size: 16px;
+                white-space: nowrap;
             }
         }
     }

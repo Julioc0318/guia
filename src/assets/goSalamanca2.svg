@@ -1,0 +1,13 @@
+<svg width="680" height="120" viewBox="0 0 680 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 整体组合容器：调整了位移，确保长文本在左侧和顶部不被裁剪 -->
+  <g transform="translate(10, 85)">
+    <!-- 1. "GO" 文本层 -->
+    <text x="0" y="0" fill="#FFFFFF" font-family="Arial Black, Impact, sans-serif" font-size="72" font-weight="900" letter-spacing="-3">GO</text>
+    
+    <!-- 2. "SALAMANCA" 文本层 -->
+    <text x="162" y="0" fill="#FFFFFF" font-family="Arial Black, Impact, sans-serif" font-size="72" font-weight="900" letter-spacing="-3.5">SALAMANCA</text>
+    
+    <!-- 3. 核心亮点方块 (Dot) - 调整了Y轴相对位置以完美适配新的文字基线 -->
+    <rect x="122" y="-22" width="26" height="22" fill="#447DF7"/>
+  </g>
+</svg>

@@ -1,0 +1,16 @@
+<svg width="640" height="120" viewBox="0 0 640 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 纯黑背景 -->
+  <rect width="640" height="120" fill="#000000"/>
+  
+  <!-- 整体组合居中容器 -->
+  <g transform="translate(35, 25)">
+    <!-- 1. "GO" 文本层 - 使用极粗、扁平无衬线风格 (Helvetica/Arial Black 替代源) -->
+    <text x="0" y="68" fill="#FFFFFF" font-family="Arial Black, Impact, sans-serif" font-size="72" font-weight="900" letter-spacing="-3">GO</text>
+    
+    <!-- 2. "SALAMANCA" 文本层 - 向右偏移给方块留出空间 -->
+    <text x="162" y="68" fill="#FFFFFF" font-family="Arial Black, Impact, sans-serif" font-size="72" font-weight="900" letter-spacing="-3.5">SALAMANCA</text>
+    
+    <!-- 3. 核心亮点方块 (Dot) - 亮科技蓝，精准嵌入间隙的中下方 -->
+    <rect x="122" y="46" width="26" height="22" fill="#447DF7"/>
+  </g>
+</svg>

@@ -1,30 +1,47 @@
 import styles from "./banner.module.less";
 import { Carousel } from "antd";
-import BannerPath_1 from "@/assets/Banner/1.jpg";
-import BannerPath_2 from "@/assets/Banner/2.jpg";
-import BannerPath_3 from "@/assets/Banner/3.jpg";
-import BannerPath_4 from "@/assets/Banner/4.jpg";
+import { BANNER_DESC_ENUM, BANNER_SRC_ENUM, BANNER_TITLE_ENUM, type BANNER_TYPE } from "./banner.d";
 
 // 1. 定义 Banner 数据的本地静态数组
-const BANNER_LIST = [
-  { id: 1, title: "Banner 1", desc: "412", src: BannerPath_1 },
-  { id: 2, title: "Banner 2", desc: "123123123123123123123123123123123123123123", src: BannerPath_2 },
-  { id: 3, title: "Banner 3", desc: "123123123123123123123123123123123123123123", src: BannerPath_3 },  
-  { id: 4, title: "Banner 4", desc: "1141", src: BannerPath_4 },
+const BANNER_LIST: BANNER_TYPE[] = [
+  {
+    id: 1,
+    title: BANNER_TITLE_ENUM.BANNER_1,
+    desc: BANNER_DESC_ENUM.BANNER_1,
+    src: BANNER_SRC_ENUM.BANNER_1,
+  },
+  {
+    id: 2,
+    title: BANNER_TITLE_ENUM.BANNER_2,
+    desc: BANNER_DESC_ENUM.BANNER_2,
+    src: BANNER_SRC_ENUM.BANNER_2,
+  },
+  {
+    id: 3,
+    title: BANNER_TITLE_ENUM.BANNER_3,
+    desc: BANNER_DESC_ENUM.BANNER_3,
+    src: BANNER_SRC_ENUM.BANNER_3,
+  },
+  {
+    id: 4,
+    title: BANNER_TITLE_ENUM.BANNER_4,
+    desc: BANNER_DESC_ENUM.BANNER_4,
+    src: BANNER_SRC_ENUM.BANNER_4,
+  },
 ];
 
 export const Banner = () => {
   return (
     <div className={styles.banner}>
-      <Carousel autoplay={{ dotDuration: true }} autoplaySpeed={4000}>
+      <Carousel autoplay={{ dotDuration: true }} autoplaySpeed={4000} pauseOnHover={false}>
         {/* 2. 使用 map 循环渲染子项 */}
         {BANNER_LIST.map((item) => (
           <div key={item.id} className={styles.bannerItem}>
             <div className={styles.bannerContent}>
-              <p>{item.desc}</p>
               <h3>{item.title}</h3>
+              <p>{item.desc}</p>
             </div>
-            <img src={item.src} alt={item.title} />
+            <img src={item.src as unknown as string} alt={item.title} />
           </div>
         ))}
       </Carousel>

@@ -4,6 +4,23 @@
     justify-content: space-between;
     align-items: center;
 
+    .logo{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        img {
+            height: 40px;
+            width: auto;
+        }
+
+        label {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--text-grey);
+        }
+    }
+
     .navButtons {
         display: flex;
         gap: 10px;
@@ -11,15 +28,16 @@
         .navButton {
             background: transparent;
             border: none;
-            color: black;
-            font-size: 16px;
+            font-size: 14px;
             cursor: pointer;
             border-radius: 32px;
             padding: 8px 16px;
-            color: white;
+            color: var(--text-grey);
+            font-family: var(--font-family-nav);
+            font-weight: lighter;
 
             &:hover {
-                color: #080A23;
+                color: var(--light-blue);
                 background: white;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             }
