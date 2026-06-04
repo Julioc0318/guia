@@ -2,39 +2,33 @@
   --light-blue: #3b82f6;
   --dark-blue: #080a23;
   --text-grey: rgba(245, 245, 245, 0.72);
-  --font-family-nav: "Inter", sans-serif;
-  --font-family-banner: cursive;
-  --font-family-basic: "Inter", sans-serif;
+  --font-family-nav:
+    -apple-system, "system-ui", "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --font-family-banner:
+    -apple-system, "system-ui", "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --font-family-basic:
+    -apple-system, "system-ui", "Segoe UI", Roboto, "Helvetica Neue", Arial;
   --basic-padding: 100px;
   --basic-font-size: 24px;
 
   @media (max-width: 1440px) {
-    font-size: 18px;
     --basic-padding: 60px;
     --basic-font-size: 18px;
   }
 
   @media (max-width: 1024px) {
-    font-size: 16px;
     --basic-padding: 30px;
     --basic-font-size: 16px;
   }
 
   @media (max-width: 768px) {
-    font-size: 14px;
     --basic-padding: 15px;
     --basic-font-size: 14px;
   }
 
   @media (max-width: 480px) {
-    font-size: 10px;
     --basic-padding: 10px;
     --basic-font-size: 10px;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root {
-    }
   }
 
   #root {
@@ -45,8 +39,9 @@
     flex-direction: column;
     box-sizing: border-box;
   }
+}
 
-  body {
-    margin: 0;
-  }
+html,
+body {
+  margin: 0;
 }

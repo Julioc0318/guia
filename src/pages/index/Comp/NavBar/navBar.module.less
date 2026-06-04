@@ -7,7 +7,7 @@
     .logo {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: calc(var(--basic-font-size) / 2);
 
         img {
             height: calc(var(--basic-font-size) * 3);
@@ -23,7 +23,7 @@
 
     .navButtons {
         display: flex;
-        gap: 10px;
+        gap: calc(var(--basic-font-size) / 2);
 
         .navButton {
             background: transparent;
@@ -31,15 +31,23 @@
             font-size: var(--basic-font-size);
             cursor: pointer;
             border-radius: 32px;
-            padding: 8px 16px;
+            padding: calc(var(--basic-font-size) / 2) calc(var(--basic-font-size) * 1.5);
             color: var(--text-grey);
             font-family: var(--font-family-nav);
             font-weight: lighter;
+
+            // 【关键 1】：开启所有可渐变属性的过渡动画（背景、颜色、阴影、阴影盒）
+            // 持续时间 0.25s 或 0.3s，使用 ease 减速曲线，让移入移出都丝滑无比
+            transition: all 0.5s ease;
 
             &:hover {
                 color: var(--light-blue);
                 background: white;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+                // 【关键 2】：利用 text-shadow 模拟加粗效果，完全不改变宽度
+                // 往左和往右分别虚化 0.3 像素，制造横向饱满的“加粗”视觉感
+                text-shadow: 0.3px 0 0 currentColor, -0.3px 0 0 currentColor;
             }
         }
     }

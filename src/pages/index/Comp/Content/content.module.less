@@ -1,89 +1,153 @@
 .content {
-    background: white;
-    padding: var(--basic-padding) var(--basic-padding);
+  background: white;
+  padding: var(--basic-padding) var(--basic-padding);
+  display: flex;
+  justify-content: space-between;
+  gap: var(--basic-font-size);
+  font-family: var(--font-family-basic);
+  font-weight: lighter;
+
+  .left {
+    background: var(--dark-blue);
+    color: white;
+    min-width: 30%;
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    font-family: var(--font-family-basic);
-    font-weight: lighter;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: var(--basic-font-size);
 
-    .left {
-        background: var(--dark-blue);
-        color: white;
-        min-width: 30%;
-        display: flex;
-        flex-direction: column;
-        justify-content: left;
-        padding: 20px;
+    h3 {
+      font-size: calc(var(--basic-font-size) * 3);
+      margin: 0;
+      font-weight: 900;
+      text-align: left;
+      line-height: 1;
+      letter-spacing: 0.12em;
+      background: linear-gradient(
+        120deg,
+        #93c5fd 0%,
+        var(--light-blue) 40%,
+        #dbeafe 100%
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 12px rgba(59, 130, 246, 0.35));
 
-        h3 {
-            font-size: calc(var(--basic-font-size) * 3);
-            margin: 0;
-            font-weight: 900;
-            color: var(--light-blue);
-            text-align: left;
-        }
-
-        .divider {
-            margin: 5px 0 5px 0;
-            background: white;
-        }
-
-        span {
-            font-size: var(--basic-font-size);
-            margin-top: 20px;
-        }
+      &::after {
+        content: "";
+        display: block;
+        width: calc(var(--basic-font-size) * 2.5);
+        height: 3px;
+        margin-top: calc(var(--basic-font-size) * 0.35);
+        border-radius: 2px;
+        background: linear-gradient(
+          90deg,
+          var(--light-blue),
+          rgba(59, 130, 246, 0.15)
+        );
+      }
     }
 
-    .right {
-        flex: 1;
-        display: flex;
-
-        .contentItem {
-            display: flex;
-            width: 25%;
-            position: relative;
-
-            img {
-                width: 100%;
-                aspect-ratio: 1 / 2;
-
-                // 3. 核心：不拉伸缩放，保持原图比例并自动裁剪
-                object-fit: cover;
-
-                // 4. 核心：裁剪时定死左侧，从左边开始保留，切掉右边多余的部分
-                object-position: left center;
-
-                filter: brightness(0.4);
-            }
-
-            .contentInfo {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                padding: 10px;
-                box-sizing: border-box;
-                z-index: 1;
-            }
-
-            h3 {
-                text-align: left;
-                font-size: var(--basic-font-size);
-                margin: 0;
-                font-weight: 900;
-                color: white;
-                font-family: var(--font-family-banner);
-                writing-mode: vertical-rl;
-            }
-
-            &:hover {
-                cursor: pointer;
-
-                img {
-                    filter: brightness(0.6);
-                }
-            }
-        }
+    .divider {
+      margin: calc(var(--basic-font-size) / 2) 0
+        calc(var(--basic-font-size) / 2) 0;
+      background: white;
     }
+
+    span {
+      font-size: var(--basic-font-size);
+      margin-top: var(--basic-font-size);
+    }
+  }
+
+  .right {
+    flex: 1;
+    display: flex;
+    gap: calc(var(--basic-font-size) / 2);
+    .contentItem {
+      display: flex;
+      width: 25%;
+      position: relative;
+      overflow: hidden;
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        pointer-events: none;
+        background: linear-gradient(
+          120deg,
+          transparent 20%,
+          rgba(255, 255, 255, 0.05) 38%,
+          rgba(226, 232, 240, 0.32) 50%,
+          rgba(248, 250, 252, 0.16) 62%,
+          transparent 80%
+        );
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+
+      img {
+        width: 100%;
+        aspect-ratio: 1 / 2;
+
+        // 3. 核心：不拉伸缩放，保持原图比例并自动裁剪
+        object-fit: cover;
+
+        // 4. 核心：裁剪时定死左侧，从左边开始保留，切掉右边多余的部分
+        object-position: left center;
+
+        filter: brightness(0.4);
+        transition: filter 0.5s ease;
+      }
+
+      .contentInfo {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: calc(var(--basic-font-size) / 2);
+        box-sizing: border-box;
+        z-index: 1;
+      }
+
+      h3 {
+        text-align: left;
+        font-size: var(--basic-font-size);
+        margin: 0;
+        font-weight: 900;
+        font-family: var(--font-family-banner);
+        writing-mode: vertical-rl;
+        line-height: 1.2;
+        letter-spacing: 0.15em;
+        background: linear-gradient(
+          180deg,
+          #ffffff 0%,
+          #f8fafc 55%,
+          #cbd5e1 100%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
+        transition:
+          filter 0.5s ease,
+          background 0.5s ease;
+      }
+
+      &:hover {
+        cursor: pointer;
+
+        &::after {
+          opacity: 1;
+        }
+
+        img {
+          filter: brightness(0.6);
+        }
+      }
+    }
+  }
 }
