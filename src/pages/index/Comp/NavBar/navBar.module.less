@@ -1,21 +1,21 @@
 .navBar {
-    padding: 15px 30px;
+    padding: calc(var(--basic-padding) / 2) var(--basic-padding);
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    .logo{
+    .logo {
         display: flex;
         align-items: center;
         gap: 10px;
 
         img {
-            height: 40px;
+            height: calc(var(--basic-font-size) * 3);
             width: auto;
         }
 
         label {
-            font-size: 24px;
+            font-size: calc(var(--basic-font-size) * 2);
             font-weight: bold;
             color: var(--text-grey);
         }
@@ -28,7 +28,7 @@
         .navButton {
             background: transparent;
             border: none;
-            font-size: 14px;
+            font-size: var(--basic-font-size);
             cursor: pointer;
             border-radius: 32px;
             padding: 8px 16px;

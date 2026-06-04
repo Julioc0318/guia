@@ -1,6 +1,6 @@
 .content {
     background: white;
-    padding: 30px 30px;
+    padding: var(--basic-padding) var(--basic-padding);
     display: flex;
     justify-content: space-between;
     gap: 20px;
@@ -17,7 +17,7 @@
         padding: 20px;
 
         h3 {
-            font-size: 36px;
+            font-size: calc(var(--basic-font-size) * 3);
             margin: 0;
             font-weight: 900;
             color: var(--light-blue);
@@ -30,7 +30,7 @@
         }
 
         span {
-            font-size: 16px;
+            font-size: var(--basic-font-size);
             margin-top: 20px;
         }
     }
@@ -69,7 +69,7 @@
 
             h3 {
                 text-align: left;
-                font-size: 18px;
+                font-size: var(--basic-font-size);
                 margin: 0;
                 font-weight: 900;
                 color: white;
@@ -79,6 +79,7 @@
 
             &:hover {
                 cursor: pointer;
+
                 img {
                     filter: brightness(0.6);
                 }

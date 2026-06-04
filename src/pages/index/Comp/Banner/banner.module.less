@@ -1,6 +1,6 @@
 .banner {
     cursor: default;
-    padding: 0px 30px;
+    padding: 0px var(--basic-padding);
     position: relative;
     background: linear-gradient(to bottom, var(--dark-blue); 0%, var(--dark-blue); 80%, #ffffff 80%, #ffffff 100%);
 
@@ -10,6 +10,7 @@
 
         img {
             width: 100%;
+            max-height: 600px;
             // 1. 显式声明完美的 5:3 宽高比（Vite 现代浏览器完美支持）
             aspect-ratio: 5 / 3;
 
@@ -30,7 +31,7 @@
             color: #fff;
 
             h3 {
-                font-size: 36px;
+                font-size: calc(var(--basic-font-size) * 3);
                 margin: 0;
                 font-weight: 900;
                 white-space: nowrap;
@@ -38,7 +39,7 @@
 
             p {
                 font-weight: lighter;
-                font-size: 16px;
+                font-size: calc(var(--basic-font-size) * 1.2);
                 white-space: nowrap;
             }
         }
