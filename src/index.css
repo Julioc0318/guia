@@ -1,4 +1,7 @@
 :root {
+  /* ==========================================
+     1. 全局基础变量 (默认应用于超大屏幕 >= 1920px)
+     ========================================== */
   --light-blue: #3b82f6;
   --dark-blue: #080a23;
   --text-grey: rgba(245, 245, 245, 0.72);
@@ -8,37 +11,64 @@
     -apple-system, "system-ui", "Segoe UI", Roboto, "Helvetica Neue", Arial;
   --font-family-basic:
     -apple-system, "system-ui", "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  --basic-padding: 100px;
+
+  --basic-padding: 120px; /* 超大屏给足呼吸感 */
   --basic-font-size: 24px;
 
-  @media (max-width: 1440px) {
-    --basic-padding: 60px;
-    --basic-font-size: 18px;
+  /* ==========================================
+     2. 精确媒体查询区间 (从大到小严格平滑过渡)
+     ========================================== */
+
+  /* 🖥️ [1441px - 1919px] 常见大屏显示器 / iMac */
+  @media (max-width: 1919px) and (min-width: 1441px) {
+    --basic-padding: 90px;
+    --basic-font-size: 22px;
   }
 
-  @media (max-width: 1024px) {
-    --basic-padding: 30px;
+  /* 💻 [1201px - 1440px] 标准笔记本电脑 (如 MacBook Pro 14, 常见15寸轻薄本) */
+  @media (max-width: 1440px) and (min-width: 1201px) {
+    --basic-padding: 70px;
+    --basic-font-size: 19px;
+  }
+
+  /* 📐 [1025px - 1200px] 小屏笔记本 / 横屏 iPad Pro */
+  @media (max-width: 1200px) and (min-width: 1025px) {
+    --basic-padding: 50px;
+    --basic-font-size: 17px;
+  }
+
+  /* 📱 [769px - 1024px] 平板电脑标准尺寸 (如 iPad / iPad Air 纵向) */
+  @media (max-width: 1024px) and (min-width: 769px) {
+    --basic-padding: 35px;
     --basic-font-size: 16px;
   }
 
-  @media (max-width: 768px) {
-    --basic-padding: 15px;
+  /* 横屏手机 / 小平板 [481px - 768px] */
+  @media (max-width: 768px) and (min-width: 481px) {
+    --basic-padding: 24px;
     --basic-font-size: 14px;
   }
 
-  @media (max-width: 480px) {
-    --basic-padding: 10px;
-    --basic-font-size: 10px;
+  /* 📱 大屏手机 [376px - 480px] (如 iPhone Max / Plus系列) */
+  @media (max-width: 480px) and (min-width: 376px) {
+    --basic-padding: 16px;
+    --basic-font-size: 12px;
   }
 
-  #root {
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
+  /* 🪟 小屏手机 [< 375px] (如 iPhone SE / 迷你屏) */
+  @media (max-width: 375px) {
+    --basic-padding: 12px;
+    --basic-font-size: 11px; /* 避免设为 10px，部分浏览器在 12px 以下会有强制渲染硬伤 */
   }
+}
+
+#root {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
 }
 
 html,

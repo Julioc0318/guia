@@ -12,9 +12,9 @@ export type CONTENT_TYPE = {
 
 export enum CONTENT_TITLE_ENUM {
     CONTENT_1 = "COLLEGE",
-    CONTENT_2 = "COURSE",
-    CONTENT_3 = "BANK ACCOUNT",
-    CONTENT_4 = "TEACHERS",
+    CONTENT_2 = "DOCUMENT",
+    CONTENT_3 = "BANK",
+    CONTENT_4 = "SALAMANCA",
 }
 
 export enum CONTENT_DESC_ENUM {

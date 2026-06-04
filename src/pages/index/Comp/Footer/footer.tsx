@@ -7,15 +7,15 @@ export const Footer = () => {
         <div className={styles.contact}>
           <div className={styles.contactRow}>
             <span className={styles.label}>PHONE:</span>
-            <span className={styles.value}>+34 123-456-7890</span>
+            <span className={styles.value}>+34 652-984-096</span>
           </div>
           <div className={styles.contactRow}>
             <span className={styles.label}>ADDRESS:</span>
-            <span className={styles.value}>123 Main St, Anytown, USA</span>
+            <span className={styles.value}>Calle de Pérez Oliva, 22, 1º D., Salamanca.</span>
           </div>
           <div className={styles.contactRow}>
             <span className={styles.label}>EMAIL:</span>
-            <span className={styles.value}>sajdjji@gamil.com</span>
+            <span className={styles.value}>cwd19980318@gamil.com</span>
           </div>
         </div>
 

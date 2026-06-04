@@ -41,7 +41,7 @@ export const Content = () => {
       <div className={styles.left}>
         <h3>GUIDE</h3>
         <Divider className={styles.divider} />
-        <span>EVERYTHING YOU NEED TO KNOW</span>
+        <span>BETTER MAKE A QUICK CHECK</span>
       </div>
       <div className={styles.right}>
         {/* 2. 使用 map 循环渲染子项 */}

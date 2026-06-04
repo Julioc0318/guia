@@ -10,17 +10,17 @@ export type BANNER_TYPE = {
   src: BANNER_SRC_ENUM;
 };
 export enum BANNER_TITLE_ENUM {
-    BANNER_1 = "WELCOME TO SALAMANCA",
-    BANNER_2 = "NEW TO COLEGIO DELIBES",
-    BANNER_3 = "NO MORE PANIC",
-    BANNER_4 = "GO. SALAMANCA",
+    BANNER_1 = "FIRST DAY IN COLEGIO DELIBES?",
+    BANNER_2 = "NEED LOCAL BANK ACC OR NUM?",
+    BANNER_3 = "NEED DOCUMENTS OFICIAL?",
+    BANNER_4 = "OLÉ! GO. SALAMANCA!",
 }
 
 export enum BANNER_DESC_ENUM {
-    BANNER_1 = "What should I do first? Let’s get you settled!",
-    BANNER_2 = "Meet your teachers, master your Spanish, and nail that SIELE exam.",
-    BANNER_3 = "Step-by-step guides for housing, TIE appointments, and city survival.",
-    BANNER_4 = "From Plaza Mayor to Roman Bridge, your golden city adventure starts now.",
+    BANNER_1 = "WHAT SHOULD I DO FIRST?\nLET’S GET YOU SETTLED!",
+    BANNER_2 = "WE HAVE BEEN THROUGH THERE.\nAND KNOW ANYTHING.",
+    BANNER_3 = "STEP-BY-STEP GUIDES.\nTO HELP YOU GET IDENTITY.",
+    BANNER_4 = "WANNA EXPLORE THE CITY?\nHERE’S A GUIDE TO GET YOU STARTED.",
 }
 
 export enum BANNER_SRC_ENUM {
