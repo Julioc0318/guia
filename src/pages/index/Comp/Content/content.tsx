@@ -1,20 +1,60 @@
-import styles from './content.module.less'
-import BannerPath_1 from "@/assets/Banner/1.jpg";
-import BannerPath_2 from "@/assets/Banner/2.jpg";
-import BannerPath_3 from "@/assets/Banner/3.jpg";
-import BannerPath_4 from "@/assets/Banner/4.jpg";
+import styles from "./content.module.less";
+// 1. 定义数据列表
+import {
+  type CONTENT_TYPE,
+  CONTENT_TITLE_ENUM,
+  CONTENT_DESC_ENUM,
+  CONTENT_SRC_ENUM,
+} from "./content.d";
+import { Divider } from "antd";
+
+const CONTENT_LIST: CONTENT_TYPE[] = [
+  {
+    id: 1,
+    title: CONTENT_TITLE_ENUM.CONTENT_1,
+    desc: CONTENT_DESC_ENUM.CONTENT_1,
+    src: CONTENT_SRC_ENUM.CONTENT_1,
+  },
+  {
+    id: 2,
+    title: CONTENT_TITLE_ENUM.CONTENT_2,
+    desc: CONTENT_DESC_ENUM.CONTENT_2,
+    src: CONTENT_SRC_ENUM.CONTENT_2,
+  },
+  {
+    id: 3,
+    title: CONTENT_TITLE_ENUM.CONTENT_3,
+    desc: CONTENT_DESC_ENUM.CONTENT_3,
+    src: CONTENT_SRC_ENUM.CONTENT_3,
+  },
+  {
+    id: 4,
+    title: CONTENT_TITLE_ENUM.CONTENT_4,
+    desc: CONTENT_DESC_ENUM.CONTENT_4,
+    src: CONTENT_SRC_ENUM.CONTENT_4,
+  },
+];
 
 export const Content = () => {
-    return <div className={styles.content}>
-        <div className={styles.left}>
-            <h3>GUIDE</h3>
-            <span>EVERYTHING YOU NEED TO KNOW</span>
-        </div>
-        <div className={styles.right}>
-            <img src={BannerPath_1} alt="Banner 1" />
-            <img src={BannerPath_2} alt="Banner 2" />
-            <img src={BannerPath_3} alt="Banner 3" />
-            <img src={BannerPath_4} alt="Banner 4" />
-        </div>
+  return (
+    <div className={styles.content}>
+      <div className={styles.left}>
+        <h3>GUIDE</h3>
+        <Divider className={styles.divider} />
+        <span>EVERYTHING YOU NEED TO KNOW</span>
+      </div>
+      <div className={styles.right}>
+        {/* 2. 使用 map 循环渲染子项 */}
+        {CONTENT_LIST.map((item) => (
+          <div key={item.id} className={styles.contentItem}>
+            <div className={styles.contentInfo}>
+              <h3>{item.title}</h3>
+              {/* <p>{item.desc}</p> */}
+            </div>
+            <img src={item.src as unknown as string} alt={item.title} />
+          </div>
+        ))}
+      </div>
     </div>
-}
+  );
+};
