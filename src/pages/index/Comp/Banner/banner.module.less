@@ -1,0 +1,41 @@
+.banner {
+    padding: 0px 30px;
+    position: relative;
+    background: linear-gradient(to bottom, #080A23; 0%, #080A23; 80%, #ffffff 80%, #ffffff 100%);
+
+    .bannerItem {
+        position: relative;
+
+        img {
+            width: 100%;
+            // 1. 显式声明完美的 5:3 宽高比（Vite 现代浏览器完美支持）
+            aspect-ratio: 5 / 3;
+
+            // 2. 核心：如果原图比例不是 5:3，自动居中裁剪，绝不拉伸变形
+            object-fit: cover;
+
+            filter: brightness(0.6);
+        }
+
+        .bannerContent {
+            width: 40%;
+            position: absolute;
+            z-index: 1;
+            color: red;
+            // background: white;
+            left: 30%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            text-align: left;
+            color: #fff;
+            h3 {
+                font-size: 36px;
+                margin: 0;
+                font-weight: 900;
+            }
+            p{
+                font-weight: lighter;
+            }
+        }
+    }
+}
