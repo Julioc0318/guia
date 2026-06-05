@@ -1,10 +1,15 @@
+import { RouterProvider } from "react-router-dom";
 import "./App.css";
-import { Index } from "./pages/index";
+import { router } from "./router";
 
 function App() {
-  return <div className="App">
-    <Index />
-  </div>;
+  return (
+    <div className="App">
+      <main className="content-layout">
+        <RouterProvider router={router} />
+      </main>
+    </div>
+  );
 }
 
 export default App;

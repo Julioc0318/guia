@@ -1,3 +1,23 @@
 .App {
   height: 100%;
 }
+
+a {
+    color: inherit;            /* 👑 核心：继承父元素的字体颜色，不再是死板的蓝色 */
+    text-decoration: none;     /* 👑 核心：去掉下划线 */
+    cursor: pointer;           /* 确保鼠标放上去时依然显示“小手”形状 */
+    
+    /* 彻底清除所有交互状态下的默认颜色变化 */
+    &:link, 
+    &:visited, 
+    &:active, 
+    &:hover {
+        color: inherit;        /* 无论点击前、点击后、按下时还是悬浮时，都继承父级颜色 */
+        text-decoration: none; /* 任何状态下都不显示下划线 */
+    }
+
+    /* 现代网页的防触控/防聚焦高亮清除（可选） */
+    &:focus {
+        outline: none;         /* 去掉点击时的外边框（特别是在移动端或某些浏览器上） */
+    }
+}
