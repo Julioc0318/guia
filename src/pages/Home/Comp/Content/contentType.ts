@@ -1,6 +1,6 @@
 import ContentPath_1 from "@/assets/Content/Colegio.jpg";
 import ContentPath_2 from "@/assets/Content/BBVA.jpg";
-import ContentPath_3 from "@/assets/Content/Nie.png";
+import ContentPath_3 from "@/assets/Content/NIE.png";
 import ContentPath_4 from "@/assets/Content/Travel.jpg";
 
 export type CONTENT_TYPE = {
