@@ -1,7 +1,7 @@
-import ContentPath_1 from "@/assets/Banner/1.jpg";
-import ContentPath_2 from "@/assets/Banner/2.jpg";
-import ContentPath_3 from "@/assets/Banner/3.jpg";
-import ContentPath_4 from "@/assets/Banner/4.jpg";
+import ContentPath_1 from "@/assets/Content/Colegio.jpg";
+import ContentPath_2 from "@/assets/Content/BBVA.jpg";
+import ContentPath_3 from "@/assets/Content/Nie.png";
+import ContentPath_4 from "@/assets/Content/Travel.jpg";
 
 export type CONTENT_TYPE = {
   id: number;
@@ -13,9 +13,9 @@ export type CONTENT_TYPE = {
 
 export const CONTENT_TITLE_ENUM = {
   CONTENT_1 : "COLLEGE",
-  CONTENT_2 : "DOCUMENT",
-  CONTENT_3 : "BANK",
-  CONTENT_4 : "TEL NUM",
+  CONTENT_2 : "BANK",
+  CONTENT_3 : "DOCUMENT",
+  CONTENT_4 : "OTHERS",
 }
 
 export const CONTENT_DESC_ENUM= {
@@ -34,9 +34,9 @@ export const CONTENT_SRC_ENUM =  {
 
 export const CONTENT_CLICK_ENUM = {
   CONTENT_1 : "https://www.colegiodelibes.es/",
-  CONTENT_2 : "/guide?keyword=document",
-  CONTENT_3 : "/guide?keyword=bank",
-  CONTENT_4 : "/guide?keyword=telephoneNumber",
+  CONTENT_2 : "/guide?keyword=bank",
+  CONTENT_3 : "/guide?keyword=document",
+  CONTENT_4 : "/guide?keyword=others",
 }
 
 export type ContentTitleType =

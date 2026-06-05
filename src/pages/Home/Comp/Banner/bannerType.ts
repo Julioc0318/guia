@@ -1,8 +1,8 @@
 /* banner.ts */
-import BannerPath_1 from "@/assets/Banner/1.jpg";
-import BannerPath_2 from "@/assets/Banner/2.jpg";
-import BannerPath_3 from "@/assets/Banner/3.jpg";
-import BannerPath_4 from "@/assets/Banner/4.jpg";
+import BannerPath_1 from "@/assets/Banner/Colegio.jpg";
+import BannerPath_2 from "@/assets/Banner/BBVA.jpg";
+import BannerPath_3 from "@/assets/Banner/NIE.webp";
+import BannerPath_4 from "@/assets/Banner/PlazaMayor.jpg";
 
 // 1. 👑 用 const 对象平替 BANNER_TITLE_ENUM
 export const BANNER_TITLE_ENUM = {
