@@ -12,10 +12,10 @@ export type CONTENT_TYPE = {
 };
 
 export const CONTENT_TITLE_ENUM = {
-  CONTENT_1 : "COLLEGE",
+  CONTENT_1 : "INFO",
   CONTENT_2 : "BANK",
-  CONTENT_3 : "DOCUMENT",
-  CONTENT_4 : "OTHERS",
+  CONTENT_3 : "NIE",
+  CONTENT_4 : "ABOOUT US",
 }
 
 export const CONTENT_DESC_ENUM= {
@@ -33,10 +33,10 @@ export const CONTENT_SRC_ENUM =  {
 }
 
 export const CONTENT_CLICK_ENUM = {
-  CONTENT_1 : "https://www.colegiodelibes.es/",
+  CONTENT_1 : "/information",
   CONTENT_2 : "/guide?keyword=bank",
-  CONTENT_3 : "/guide?keyword=document",
-  CONTENT_4 : "/guide?keyword=others",
+  CONTENT_3 : "",
+  CONTENT_4 : "/aboutUs",
 }
 
 export type ContentTitleType =

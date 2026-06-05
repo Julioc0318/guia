@@ -52,7 +52,7 @@
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 
       h3 {
-        font-family: var(--font-display); // 确保用上了你的高级自定义字体！
+        font-family: var(--font-display);
         font-size: calc(var(--basic-font-size) * 3);
         margin: 0 0 12px 0; // 增加底部外边距，拉开和段落的呼吸感
         font-weight: 900;
@@ -63,14 +63,9 @@
 
       p {
         margin-top: calc(2 * var(--basic-font-size));
-        font-weight: 300; // 比 lighter 更有精准控制力的细体
+        font-weight: 500; // 比 lighter 更有精准控制力的细体
         font-size: calc(var(--basic-font-size) * 1.15);
-        color: rgba(
-          255,
-          255,
-          255,
-          0.85
-        ); // 核心：副标题颜色微微调淡，瞬间拉开主次层级
+        color: var(--light-grey); // 核心：副标题颜色微微调淡，瞬间拉开主次层级
         line-height: 1.6; // 正文行高要放开，极大地提高阅读舒适度
         letter-spacing: 0.05em;
 

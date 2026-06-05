@@ -47,23 +47,37 @@ export const Content = () => {
   return (
     <div className={styles.content}>
       <div className={styles.left}>
-        <h3 className={"clickable gradiente-blue"} onClick={() => onJump("/guide")}>GUIDE</h3>
+        <h3 className={"gradiente-blue"}>GUIDE</h3>
         <Divider className={styles.divider} />
-        <span>BETTER MAKE A QUICK CHECK</span>
+        <div className={styles.informationArea}>
+          <span>1. Check the information posted by the college.</span>
+          <span>2. How to open a bank account here?</span>
+          <span>3. How to apply NIE?</span>
+          <span>4. About us.</span>
+        </div>
       </div>
       <div className={styles.right}>
         {/* 2. 使用 map 循环渲染子项 */}
         {CONTENT_LIST.map((item) => (
           <div
             key={item.id}
-            className={styles.contentItem}
-            onClick={() => onJump(item.click)}
+            className={`${styles.contentItem} ${item.click ? styles.contentItemClickable : styles.contentItemUnclickable}`}
+            onClick={() => (item.click ? onJump(item.click) : null)}
           >
             <div className={styles.contentInfo}>
               <h3>{item.title}</h3>
-              {/* <p>{item.desc}</p> */}
             </div>
             <img src={item.src as unknown as string} alt={item.title} />
+
+            {/* 👑 核心扩展：如果不可点击，注入“建设中”的划出遮罩层 */}
+            {!item.click && (
+              <div className={styles.comingSoonOverlay}>
+                <div className={styles.overlayText}>
+                  <span>UNDER</span>
+                  <span>CONSTRUCTION</span>
+                </div>
+              </div>
+            )}
           </div>
         ))}
       </div>

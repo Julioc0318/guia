@@ -4,7 +4,14 @@
      ========================================== */
   --light-blue: #3b82f6;
   --dark-blue: #080a23;
-  --text-grey: rgba(245, 245, 245, 0.72);
+  --light-grey: #F5F5F5B8;
+  --mid-grey: #9CA3AF;
+  --dark-grey: #1F2937;
+  --light-orange: #F59E0B;
+  --mid-orange: #F97316;
+
+
+
   --font-family-nav:
     -apple-system, "system-ui", "Segoe UI", Roboto, "Helvetica Neue", Arial;
   --font-family-banner:

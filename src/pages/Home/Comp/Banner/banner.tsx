@@ -46,7 +46,7 @@ export const Banner = () => {
         {BANNER_LIST.map((item) => (
           <div key={item.id} className={styles.bannerItem}>
             <div className={styles.bannerContent}>
-              <h3>{item.title}</h3>
+              <h3 className="gradiente-blue">{item.title}</h3>
               <p>{item.desc}</p>
             </div>
             <img src={item.src as unknown as string} alt={item.title} />

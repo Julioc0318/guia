@@ -1,5 +1,5 @@
 import styles from "./navBar.module.less";
-import Logo from "@/assets/goSalamanca2.svg";
+import Logo from "@/assets/LOGO.svg";
 import { useNavigateLink } from "@/hooks";
 import { useMemo } from "react";
 
@@ -16,13 +16,13 @@ export const NavBar = () => {
             className={styles.navButton}
             onClick={() => onJump("/introduce")}
           >
-            INTRODUCE
+            INFO
           </div>
           <div className={styles.navButton} onClick={() => onJump("/guide")}>
             GUIDE
           </div>
           <div className={styles.navButton} onClick={() => onJump("/contact")}>
-            CONTACT
+            ABOOUT US
           </div>
         </div>
       </>
