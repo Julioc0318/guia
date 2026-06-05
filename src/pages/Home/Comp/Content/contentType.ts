@@ -1,7 +1,7 @@
-import ContentPath_1 from "@/assets/Content/Colegio.jpg";
-import ContentPath_2 from "@/assets/Content/BBVA.jpg";
+import ContentPath_1 from "@/assets/Content/Colegio.png";
+import ContentPath_2 from "@/assets/Content/BBVA.png";
 import ContentPath_3 from "@/assets/Content/NIE.png";
-import ContentPath_4 from "@/assets/Content/Travel.jpg";
+import ContentPath_4 from "@/assets/Content/Travel.png";
 
 export type CONTENT_TYPE = {
   id: number;

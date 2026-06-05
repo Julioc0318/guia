@@ -47,7 +47,7 @@ export const Content = () => {
   return (
     <div className={styles.content}>
       <div className={styles.left}>
-        <h3 onClick={() => onJump("/guide")}>GUIDE</h3>
+        <h3 className={"clickable gradiente-blue"} onClick={() => onJump("/guide")}>GUIDE</h3>
         <Divider className={styles.divider} />
         <span>BETTER MAKE A QUICK CHECK</span>
       </div>

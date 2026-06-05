@@ -26,30 +26,6 @@
       text-align: left;
       line-height: 1;
       letter-spacing: 0.12em;
-      background: linear-gradient(
-        120deg,
-        #93c5fd 0%,
-        var(--light-blue) 40%,
-        #dbeafe 100%
-      );
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0 2px 12px rgba(59, 130, 246, 0.35));
-
-      &::after {
-        content: "";
-        display: block;
-        width: calc(var(--basic-font-size) * 2.5);
-        height: 3px;
-        margin-top: calc(var(--basic-font-size) * 0.35);
-        border-radius: 2px;
-        background: linear-gradient(
-          90deg,
-          var(--light-blue),
-          rgba(59, 130, 246, 0.15)
-        );
-      }
     }
 
     .divider {
@@ -104,9 +80,7 @@
 
         // 3. 核心：不拉伸缩放，保持原图比例并自动裁剪
         object-fit: cover;
-
-        // 4. 核心：裁剪时定死左侧，从左边开始保留，切掉右边多余的部分
-        object-position: left center;
+        object-position: center;
 
         filter: brightness(0.4);
         transition: filter 0.5s ease;
@@ -141,9 +115,7 @@
         background-clip: text;
         -webkit-text-fill-color: transparent;
         filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
-        transition:
-          filter 0.5s ease,
-          background 0.5s ease;
+        transition: all 0.5s ease;
       }
 
       &:hover {

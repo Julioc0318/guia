@@ -41,7 +41,6 @@ export const Banner = () => {
       <Carousel
         autoplay={{ dotDuration: true }}
         autoplaySpeed={4000}
-        pauseOnHover={false}
       >
         {/* 2. 使用 map 循环渲染子项 */}
         {BANNER_LIST.map((item) => (
