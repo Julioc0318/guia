@@ -7,7 +7,6 @@ import {
   CONTENT_SRC_ENUM,
   CONTENT_CLICK_ENUM,
 } from "./contentType";
-import { Divider } from "antd";
 import { useNavigateLink } from "@/hooks";
 
 const CONTENT_LIST: CONTENT_TYPE[] = [

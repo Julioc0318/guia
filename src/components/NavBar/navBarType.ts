@@ -35,9 +35,9 @@ export const NavBarList = [
     name: NavBarActiveTabName.Bank,
     path: NavBarActiveTabPath.Bank,
   },
-  {
-    key: "AboutUs",
-    name: NavBarActiveTabName.AboutUs,
-    path: NavBarActiveTabPath.AboutUs,
-  },
+  // {
+  //   key: "AboutUs",
+  //   name: NavBarActiveTabName.AboutUs,
+  //   path: NavBarActiveTabPath.AboutUs,
+  // },
 ];

@@ -33,10 +33,10 @@ export const CONTENT_SRC_ENUM =  {
 }
 
 export const CONTENT_CLICK_ENUM = {
-  CONTENT_1 : "/information",
-  CONTENT_2 : "/guide?keyword=bank",
+  CONTENT_1 : "/clase",
+  CONTENT_2 : "/bank",
   CONTENT_3 : "",
-  CONTENT_4 : "/aboutUs",
+  CONTENT_4 : "",
 }
 
 export type ContentTitleType =
