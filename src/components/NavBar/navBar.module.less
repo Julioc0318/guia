@@ -1,5 +1,9 @@
 .navBar {
-  padding: calc(var(--basic-padding) / 2) var(--basic-padding);
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1000;
+  background-color: var(--dark-blue);
+  padding: calc(var(--basic-padding) / 5) var(--basic-padding);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -7,9 +11,11 @@
   /* 横屏手机 / 小平板 [481px - 768px] */
   @media (max-width: 768px) {
     flex-direction: column;
+    padding: calc(var(--basic-padding) / 2) var(--basic-padding);
   }
 
   .logo {
+    cursor: pointer;
     display: flex;
     align-items: center;
     gap: calc(var(--basic-font-size) / 2);
@@ -69,4 +75,11 @@
       }
     }
   }
+}
+
+.navBarFixed{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }

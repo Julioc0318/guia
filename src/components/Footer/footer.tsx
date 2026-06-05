@@ -6,16 +6,16 @@ export const Footer = () => {
       <div className={styles.information}>
         <div className={styles.contact}>
           <div className={styles.contactRow}>
-            <span className={styles.label}>PHONE:</span>
+            <span className={styles.label}>TEL:</span>
             <span className={styles.value}>+34 652-984-096</span>
           </div>
           <div className={styles.contactRow}>
-            <span className={styles.label}>ADDRESS:</span>
+            <span className={styles.label}>ADDR:</span>
             <span className={styles.value}>Calle de Pérez Oliva, 22, 1º D., Salamanca.</span>
           </div>
           <div className={styles.contactRow}>
             <span className={styles.label}>EMAIL:</span>
-            <span className={styles.value}>cwd19980318@gamil.com</span>
+            <span className={styles.value}>Cwd19980318@gamil.com</span>
           </div>
         </div>
 
