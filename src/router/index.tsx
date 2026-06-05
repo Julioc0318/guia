@@ -1,6 +1,6 @@
 /* src/router/index.tsx */
 import { createBrowserRouter, Navigate } from "react-router-dom";
-import { Index } from "../pages/Index/index";
+import { Home } from "../pages/Home/Home.tsx";
 import { Introduce } from "../pages/Introduce/Introduce.tsx";
 import { Guide } from "../pages/Guide/Guide.tsx";
 import { Contact } from "../pages/Contact/Contact.tsx";
@@ -11,7 +11,7 @@ export const router = createBrowserRouter(
   [
     {
       path: "/",               // 对应首页 (域名/仓库名/)
-      element: <Index />,
+      element: <Home />,
     },
     {
       path: "/introduce",      // 对应介绍页 (域名/仓库名/introduce)
