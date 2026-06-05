@@ -19,15 +19,15 @@ export const router = createBrowserRouter(
           element: <Home />,
         },
         {
-          path: "/introduce", // 对应介绍页 (域名/仓库名/introduce)
+          path: "/clase", // 对应介绍页 (域名/仓库名/introduce)
           element: <Introduce />,
         },
         {
-          path: "/guide", // 对应指南页 (域名/仓库名/guide)
+          path: "/bank", // 对应指南页 (域名/仓库名/guide)
           element: <Guide />,
         },
         {
-          path: "/contact", // 对应联系页 (域名/仓库名/contact)
+          path: "/aboutUs", // 对应联系页 (域名/仓库名/contact)
           element: <Contact />,
         },
         {

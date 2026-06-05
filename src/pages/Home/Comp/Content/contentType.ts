@@ -12,7 +12,7 @@ export type CONTENT_TYPE = {
 };
 
 export const CONTENT_TITLE_ENUM = {
-  CONTENT_1 : "INFO",
+  CONTENT_1 : "CLASE",
   CONTENT_2 : "BANK",
   CONTENT_3 : "NIE",
   CONTENT_4 : "ABOOUT US",

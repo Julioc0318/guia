@@ -7,20 +7,20 @@ export const Footer = () => {
         <div className={styles.contact}>
           <div className={styles.contactRow}>
             <span className={styles.label}>TEL:</span>
-            <span className={styles.value}>+34 652-984-096</span>
+            <span className={styles.value}>+34 923-120-460</span>
           </div>
           <div className={styles.contactRow}>
             <span className={styles.label}>ADDR:</span>
-            <span className={styles.value}>Calle de Pérez Oliva, 22, 1º D., Salamanca.</span>
+            <span className={styles.value}>Plaza Julián Sánchez El Charro, 1 37005 Salamanca (España).</span>
           </div>
           <div className={styles.contactRow}>
             <span className={styles.label}>EMAIL:</span>
-            <span className={styles.value}>Cwd19980318@gamil.com</span>
+            <span className={styles.value}>delibes@colegiodelibes.com</span>
           </div>
         </div>
 
         <div className={styles.divider} />
-        <div>COPYRIGHT © 2026 SALAMANCA.GO. All rights reserved.</div>
+        <div>COPYRIGHT ©GO.DELIBES 2026 All rights reserved.</div>
       </div>
     </div>
   );

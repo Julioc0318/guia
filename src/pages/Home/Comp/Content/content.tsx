@@ -46,7 +46,7 @@ export const Content = () => {
 
   return (
     <div className={styles.content}>
-      <div className={styles.left}>
+      {/* <div className={styles.left}>
         <h3 className={"gradiente-blue"}>GUIDE</h3>
         <Divider className={styles.divider} />
         <div className={styles.informationArea}>
@@ -55,7 +55,7 @@ export const Content = () => {
           <span>3. How to apply NIE?</span>
           <span>4. About us.</span>
         </div>
-      </div>
+      </div> */}
       <div className={styles.right}>
         {/* 2. 使用 map 循环渲染子项 */}
         {CONTENT_LIST.map((item) => (
