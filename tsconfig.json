@@ -3,5 +3,18 @@
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
-  ]
+  ],
+  "compilerOptions": {
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "paths": {
+      "@/*": ["./src/*"], // 匹配根目录下 src 内的所有内容
+      "@/components/*": ["./src/components/*"], // 方便直接引入全局组件
+      "@/pages/*": ["./src/pages/*"], // 方便直接引入页面
+      "@/utils/*": ["./src/utils/*"], // 方便直接引入工具函数
+      "@/hooks/*": ["./src/hooks/*"], // 方便直接引入自定义 Hook
+      "@/router/*": ["./src/router/*"], // 方便直接引入路由
+      "@/assets/*": ["./src/assets/*"] // 方便直接引入图片/样式
+    }
+  }
 }

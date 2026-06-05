@@ -9,7 +9,7 @@
 
     /* Bundler mode */
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
+    "allowImportingTsExtensions": true, 
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
     "noEmit": true,
@@ -19,7 +19,19 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* 👑 归位：paths 必须写在 compilerOptions 里面 */
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/components/*": ["./src/components/*"],
+      "@/pages/*": ["./src/pages/*"],
+      "@/utils/*": ["./src/utils/*"],
+      "@/hooks/*": ["./src/hooks/*"],
+      "@/router/*": ["./src/router/*"],
+      "@/assets/*": ["./src/assets/*"]
+    }
   },
-  "include": ["src"]
+  /* 👑 修正：确保扫描整个 src 目录下的所有深层文件夹和文件 */
+  "include": ["src/**/*"]
 }

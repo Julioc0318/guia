@@ -1,4 +1,3 @@
-import { Link, useNavigate } from "react-router-dom";
 import styles from "./content.module.less";
 // 1. 定义数据列表
 import {
@@ -9,6 +8,7 @@ import {
   CONTENT_CLICK_ENUM,
 } from "./contentType";
 import { Divider } from "antd";
+import { useNavigateLink } from "@/hooks";
 
 const CONTENT_LIST: CONTENT_TYPE[] = [
   {
@@ -42,26 +42,12 @@ const CONTENT_LIST: CONTENT_TYPE[] = [
 ];
 
 export const Content = () => {
-  const navigate = useNavigate();
-
-  const onJump = (url: string) => {
-    // 🚀 核心：通过正则表达式或 String.startsWith 判断是否是外部链接
-    const isExternal = /^https?:\/\//.test(url);
-
-    if (isExternal) {
-      window.open(url, "_self", "noopener,noreferrer");
-    } else {
-      // 🏠 情况 B：内部路由，继续使用 react-router 的 navigate
-      navigate(url);
-    }
-  };
+  const { onJump } = useNavigateLink();
 
   return (
     <div className={styles.content}>
       <div className={styles.left}>
-        <h3>
-          <Link to="/guide">GUIDE</Link>
-        </h3>
+        <h3 onClick={() => onJump("/guide")}>GUIDE</h3>
         <Divider className={styles.divider} />
         <span>BETTER MAKE A QUICK CHECK</span>
       </div>

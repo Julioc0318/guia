@@ -1,9 +1,9 @@
 /* src/router/index.tsx */
 import { createBrowserRouter, Navigate } from "react-router-dom";
-import { Home } from "../pages/Home/Home.tsx";
-import { Introduce } from "../pages/Introduce/Introduce.tsx";
-import { Guide } from "../pages/Guide/Guide.tsx";
-import { Contact } from "../pages/Contact/Contact.tsx";
+import { Home } from "@/pages/Home/Home";
+import { Introduce } from "@/pages/Introduce/Introduce";
+import { Guide } from "@/pages/Guide/Guide";
+import { Contact } from "@/pages/Contact/Contact";
 
 const baseName = import.meta.env.BASE_URL;
 
