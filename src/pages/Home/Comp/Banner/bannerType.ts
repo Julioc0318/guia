@@ -6,18 +6,18 @@ import BannerPath_4 from "@/assets/Banner/PlazaMayor.jpg";
 
 // 1. 👑 用 const 对象平替 BANNER_TITLE_ENUM
 export const BANNER_TITLE_ENUM = {
-  BANNER_1: "FIRST DAY IN COLEGIO DELIBES?",
-  BANNER_2: "NEED LOCAL BANK ACC OR NUM?",
-  BANNER_3: "NEED DOCUMENTS OFICIAL?",
-  BANNER_4: "LET'S GO SALAMANCA!",
+  BANNER_1: "home.banner.bannerTitle.1",
+  BANNER_2: "home.banner.bannerTitle.2",
+  BANNER_3: "home.banner.bannerTitle.3",
+  BANNER_4: "home.banner.bannerTitle.4",
 };
 
 // 2. 👑 用 const 对象平替 BANNER_DESC_ENUM
 export const BANNER_DESC_ENUM = {
-  BANNER_1: "WHAT SHOULD I DO FIRST?\nLET’S GET YOU SETTLED!",
-  BANNER_2: "WE HAVE BEEN THROUGH THERE.\nAND KNOW ANYTHING.",
-  BANNER_3: "STEP-BY-STEP GUIDES.\nTO HELP YOU GET IDENTITY.",
-  BANNER_4: "WANNA EXPLORE THE CITY?\nHERE’S A GUIDE TO GET YOU STARTED.",
+  BANNER_1: "home.banner.bannerDes.1",
+  BANNER_2: "home.banner.bannerDes.1",
+  BANNER_3: "home.banner.bannerDes.1",
+  BANNER_4: "home.banner.bannerDes.1",
 };
 
 // 3. 动态提取类型（如果你需要将这些值作为单独的 TS 类型使用）

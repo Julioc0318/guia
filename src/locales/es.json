@@ -1,0 +1,61 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "clase": "Clase",
+    "bank": "Banco",
+    "aboutUs": "Sobre Nosotros"
+  },
+  "footer": {
+    "tele": "Teléfono",
+    "addr": "Dirección",
+    "email": "Email",
+    "copyright": "Copyright"
+  },
+  "home": {
+    "banner": {
+      "bannerTitle": {
+        "1": "¿PRIMER DÍA EN COLEGIO DELIBES?",
+        "2": "¿NECESITAS CUENTA O NÚMERO LOCAL?",
+        "3": "¿NECESITAS DOCUMENTOS OFICIALES?",
+        "4": "¡VAMOS A SALAMANCA!"
+      },
+      "bannerDes": {
+        "1": "¿QUÉ DEBO HACER PRIMERO?\n¡TE AYUDAMOS A INSTALARTE!",
+        "2": "HEMOS PASADO POR AHÍ.\nY LO SABEMOS TODO.",
+        "3": "GUÍAS PASO A PASO.\nPARA CONSEGUIR TU IDENTIDAD.",
+        "4": "¿QUIERES EXPLORAR LA CIUDAD?\nAQUÍ TIENES UNA GUÍA PARA EMPEZAR."
+      }
+    },
+    "content": {
+      "home": "Inicio",
+      "Clase": "Clase",
+      "Bank": "Banco",
+      "NIE": "NIE",
+      "aboutUs": "Sobre Nosotros",
+      "Under": "En",
+      "Construction": "Construcción"
+    }
+  },
+  "guide": {
+    "badge": "📢 SOLO PASAPORTE",
+    "title": "Guía de Apertura de Cuenta BBVA con Pasaporte",
+    "desc": "Comparto mi experiencia abriendo una cuenta BBVA en Salamanca solo con pasaporte. Sigue estos pasos para asegurar el éxito y activar tus recompensas.",
+    "step1Title": "1. Preparar Documentos para la Oficina",
+    "step1Desc": "NO solicites la cuenta a través de la app primero (los pasaportes no comunitarios suelen bloquearse). Ve directamente a la oficina central cerca de la Plaza Mayor con esto:",
+    "doc1": "Pasaporte Original (Mínimo 6 meses de validez)",
+    "doc2": "Fotocopia de la página de la foto del pasaporte",
+    "doc3": "Matrícula o carta de aceptación del Colegio Delibes",
+    "doc4": "Número de teléfono español y dirección local",
+    "step2Title": "2. Abrir Cuenta e Introducir Código de Recomendación",
+    "step2Desc": "Indica al gestor que deseas abrir una cuenta. Cuando introduzca tus datos para la firma digital o al activar la app, asegúrate de introducir este código para activar tu bonificación:",
+    "codeLabel": "Introduce el código para obtener €50 de reembolso:",
+    "codeImportance": "CRÍTICO: Tras activar la cuenta y realizar una primera compra de más de €50 con la tarjeta de débito, BBVA te ingresará €50 directamente en tu cuenta. Puedes mostrarle este código al gestor.",
+    "officialLink": "Ver Condiciones Oficiales del 'Plan Invita a un Amigo' de BBVA",
+    "step3Title": "3. Activación de la App y Bizum",
+    "step3Desc": "Tras firmar, descarga la App BBVA España e inicia sesión con la contraseña temporal del gestor. Obligatorio: Pide al gestor que te active Bizum en el acto.",
+    "step4Title": "4. Obtener tu IBAN y Tarjeta Física",
+    "step4Desc": "Tu IBAN de 24 dígitos (que empieza por ES) aparecerá al instante en la app para recibir transferencias. La tarjeta de débito llegará a tu domicilio en 1 o 2 semanas.",
+    "warningTitle": "Seguro de No Residente vs. Política de Edad",
+    "warningDesc": "Las cuentas con pasaporte implican un control de riesgo estricto; las oficinas suelen exigir un seguro básico de no residente (€50 - €200/año). Sin embargo, si eres menor de 30 años, entras en la categoría de protección para jóvenes/estudiantes y normalmente no lo necesitas. Utiliza este argumento con el gestor."
+  }
+}

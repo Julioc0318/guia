@@ -6,23 +6,15 @@ import ContentPath_4 from "@/assets/Content/Travel.png";
 export type CONTENT_TYPE = {
   id: number;
   title: ContentTitleType;
-  desc: ContentrDescType;
   src: string;
   click: ContentClickType;
 };
 
 export const CONTENT_TITLE_ENUM = {
-  CONTENT_1 : "CLASE",
-  CONTENT_2 : "BANK",
-  CONTENT_3 : "NIE",
-  CONTENT_4 : "ABOOUT US",
-}
-
-export const CONTENT_DESC_ENUM= {
-  CONTENT_1 : "Find your way around Salamanca and locate Colegio Delibes easily. Our campus is perfectly situated in the heart of this beautiful golden city, making it convenient for your daily commute and exploration.",
-  CONTENT_2 : "Explore our diverse range of Spanish language programs designed for all proficiency levels. From intensive grammar workshops to specialized SIELE exam preparation, we have the perfect path for your learning goals.",
-  CONTENT_3 : "Get your local finances sorted without the hassle. We provide a straightforward, step-by-step guide to choosing the right Spanish bank, preparing required documents, and successfully opening your student account.",
-  CONTENT_4 : "Get to know the passionate and experienced educators at Colegio Delibes. Our friendly native teachers are fully dedicated to immersive language teaching and helping you adapt smoothly to life in Spain.",
+  CONTENT_1 : "home.content.Clase",
+  CONTENT_2 : "home.content.Bank",
+  CONTENT_3 : "home.content.NIE",
+  CONTENT_4 : "home.content.aboutUs",
 }
 
 export const CONTENT_SRC_ENUM =  {
@@ -41,7 +33,31 @@ export const CONTENT_CLICK_ENUM = {
 
 export type ContentTitleType =
   (typeof CONTENT_TITLE_ENUM)[keyof typeof CONTENT_TITLE_ENUM];
-export type ContentrDescType =
-  (typeof CONTENT_DESC_ENUM)[keyof typeof CONTENT_DESC_ENUM];
-
   export type ContentClickType = (typeof CONTENT_CLICK_ENUM)[keyof typeof CONTENT_CLICK_ENUM]
+
+  export const CONTENT_LIST: CONTENT_TYPE[] = [
+  {
+    id: 1,
+    title: CONTENT_TITLE_ENUM.CONTENT_1,
+    src: CONTENT_SRC_ENUM.CONTENT_1,
+    click: CONTENT_CLICK_ENUM.CONTENT_1,
+  },
+  {
+    id: 2,
+    title: CONTENT_TITLE_ENUM.CONTENT_2,
+    src: CONTENT_SRC_ENUM.CONTENT_2,
+    click: CONTENT_CLICK_ENUM.CONTENT_2,
+  },
+  {
+    id: 3,
+    title: CONTENT_TITLE_ENUM.CONTENT_3,
+    src: CONTENT_SRC_ENUM.CONTENT_3,
+    click: CONTENT_CLICK_ENUM.CONTENT_3,
+  },
+  {
+    id: 4,
+    title: CONTENT_TITLE_ENUM.CONTENT_4,
+    src: CONTENT_SRC_ENUM.CONTENT_4,
+    click: CONTENT_CLICK_ENUM.CONTENT_4,
+  },
+];

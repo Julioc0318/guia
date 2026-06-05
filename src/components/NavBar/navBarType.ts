@@ -13,10 +13,10 @@ export enum NavBarActiveTabPath {
 }
 
 export enum NavBarActiveTabName {
-  Home = "HOME",
-  Clase = "CLASE",
-  Bank = "BANK",
-  AboutUs = "ABOUT US",
+  Home = "nav.home",
+  Clase = "nav.clase",
+  Bank = "nav.bank",
+  AboutUs = "nav.aboutUs",
 }
 
 export const NavBarList = [

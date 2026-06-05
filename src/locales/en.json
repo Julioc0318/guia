@@ -1,0 +1,61 @@
+{
+  "nav": {
+    "home": "Home",
+    "clase": "Class",
+    "bank": "Bank",
+    "aboutUs": "About Us"
+  },
+  "footer": {
+    "tele": "Phone",
+    "addr": "Address",
+    "email": "Email",
+    "copyright": "Copyright"
+  },
+  "home": {
+    "banner": {
+      "bannerTitle": {
+        "1": "FIRST DAY IN COLEGIO DELIBES?",
+        "2": "NEED LOCAL BANK ACC OR NUM?",
+        "3": "NEED OFFICIAL DOCUMENTS?",
+        "4": "LET'S GO SALAMANCA!"
+      },
+      "bannerDes": {
+        "1": "WHAT SHOULD I DO FIRST?\nLET’S GET YOU SETTLED!",
+        "2": "WE HAVE BEEN THROUGH THERE.\nAND KNOW EVERYTHING.",
+        "3": "STEP-BY-STEP GUIDES.\nTO HELP YOU GET IDENTITY.",
+        "4": "WANNA EXPLORE THE CITY?\nHERE’S A GUIDE TO GET YOU STARTED."
+      }
+    },
+    "content": {
+      "home": "Home",
+      "Clase": "Class",
+      "Bank": "Bank",
+      "NIE": "NIE",
+      "aboutUs": "About Us",
+      "Under": "Under",
+      "Construction": "Construction"
+    }
+  },
+  "guide": {
+    "badge": "📢 PASSPORT ONLY",
+    "title": "BBVA Passport Account Opening Guide",
+    "desc": "Sharing my successful experience opening a BBVA account in Salamanca using only a passport. Follow these steps carefully to ensure a smooth setup and activate your rewards.",
+    "step1Title": "1. Prepare Documents for Branch Visit",
+    "step1Desc": "Do NOT apply via the mobile app first (non-EU passports easily get stuck in automatic verification). Go directly to the central branch near Plaza Mayor with these documents:",
+    "doc1": "Original Passport (Valid for 6+ months)",
+    "doc2": "Photocopy of the passport photo page",
+    "doc3": "Colegio Delibes Enrollment Letter (Matrícula)",
+    "doc4": "Spanish phone number & local address",
+    "step2Title": "2. Open Account & Link Referral Code (Crucial)",
+    "step2Desc": "Inform the manager you want to open an account. When they input your data for digital signing or during app activation, ensure you enter the following referral code to unlock your bonus:",
+    "codeLabel": "Enter referral code to get a €50 cash bonus:",
+    "codeImportance": "CRITICAL: After activating your account and making your first debit card purchase of over €50, BBVA will credit €50 directly into your account. You can show this code to the manager at the branch.",
+    "officialLink": "Check BBVA Official 'Plan Invita a un Amigo' Terms",
+    "step3Title": "3. App Activation & Bizum Setup",
+    "step3Desc": "Once signed, download the BBVA Spain App and log in with the temporary password provided. Crucial: Ask the manager to activate Bizum (instant transfer system) on the spot.",
+    "step4Title": "4. Get Your IBAN & Debit Card",
+    "step4Desc": "Your 24-digit IBAN (starting with ES) will appear instantly in the app for international transfers. Your physical debit card will arrive at your address within 1-2 weeks.",
+    "warningTitle": "Non-Resident Insurance vs. Age Policy",
+    "warningDesc": "Passport accounts face strict risk checks; branches usually mandate a basic non-resident insurance policy (€50 - €200/year). However, if you are under 30, you generally fall under student/youth protection and do not need it to open the account. Use this point to negotiate with the manager."
+  }
+}

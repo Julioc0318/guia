@@ -49,7 +49,7 @@
   position: relative;
   padding-left: calc(var(--basic-font-size) * 1.8);
   border-left: 2px solid var(--light-grey);
-  
+
   &:last-child {
     border-left: 2px solid transparent;
   }
@@ -64,7 +64,7 @@
 
 .stepBadge {
   position: absolute;
-  left: calc(var(--basic-font-size) * -0.75 - 1px); 
+  left: calc(var(--basic-font-size) * -0.75 - 1px);
   top: 0;
   width: calc(var(--basic-font-size) * 1.4);
   height: calc(var(--basic-font-size) * 1.4);
@@ -88,7 +88,8 @@
 /* 材料网格 */
 .docsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(calc(var(--basic-font-size) * 18), 1fr));
+  /* 🚀 改用 auto-fit 并基于你的流式字号限制最小宽度，防止外文长文本挤压变形 */
+  grid-template-columns: repeat(auto-fit, minmax(calc(var(--basic-font-size) * 14), 1fr));
   gap: calc(var(--basic-font-size) * 0.4);
   margin-top: calc(var(--basic-font-size) * 0.5);
 }
@@ -106,7 +107,8 @@
 .codePromoBox {
   margin-top: calc(var(--basic-font-size) * 0.6);
   padding: calc(var(--basic-font-size) * 0.8);
-  background-color: rgba(249, 115, 22, 0.05); /* 基于 mid-orange 的极淡环境背景色 */
+  background-color: rgba(249, 115, 22, 0.05);
+  /* 基于 mid-orange 的极淡环境背景色 */
   border-radius: calc(var(--basic-font-size) * 0.5);
   border: 1px dashed var(--mid-orange);
 
@@ -116,12 +118,12 @@
     color: var(--mid-orange);
     margin-bottom: calc(var(--basic-font-size) * 0.2);
   }
-  
+
   .codeValue {
     font-size: calc(var(--basic-font-size) * 1.3);
     font-weight: 900;
     font-family: monospace;
-    color: var(--dark-blue);
+    color: var(--light-blue);
     background: var(--light-grey);
     padding: calc(var(--basic-font-size) * 0.2) calc(var(--basic-font-size) * 0.5);
     display: inline-block;
@@ -139,7 +141,8 @@
 /* 底部警告说明 */
 .warningAlert {
   padding: calc(var(--basic-font-size) * 1) calc(var(--basic-font-size) * 1.5);
-  background-color: rgba(245, 158, 11, 0.08); /* 基于 light-orange */
+  background-color: rgba(245, 158, 11, 0.08);
+  /* 基于 light-orange */
   border-top: 1px solid rgba(245, 158, 11, 0.15);
   display: flex;
   gap: calc(var(--basic-font-size) * 0.6);
@@ -147,7 +150,7 @@
   .alertIcon {
     font-size: calc(var(--basic-font-size) * 1);
   }
-  
+
   .alertContent {
     h4 {
       font-weight: 800;
@@ -155,6 +158,7 @@
       font-size: calc(var(--basic-font-size) * 0.8);
       margin-bottom: calc(var(--basic-font-size) * 0.15);
     }
+
     p {
       font-size: calc(var(--basic-font-size) * 0.75);
       color: var(--dark-grey);

@@ -5,10 +5,12 @@ import { useMemo } from "react";
 import { useLocation } from "react-router-dom";
 import { NavBarActiveTabPath, NavBarList } from "./navBarType";
 import classNames from "classnames";
+import { useTranslation } from "react-i18next";
 
 export const NavBar = () => {
   const { onJump } = useNavigateLink();
   const location = useLocation();
+  const { t } = useTranslation();
 
   const activeKey = useMemo(() => {
     const currentItem = NavBarList.find(
@@ -27,7 +29,6 @@ export const NavBar = () => {
           <img src={Logo} alt="logo" />
         </div>
         <div className={styles.navButtons}>
-          {/* 👑 一行 map，搞定所有导航按钮的渲染、高亮判定、点击事件 */}
           {NavBarList.map((item) => (
             <div
               key={item.key}
@@ -36,13 +37,13 @@ export const NavBar = () => {
               })}
               onClick={() => onJump(item.path)}
             >
-              {item.name}
+              {t(item.name)}
             </div>
           ))}
         </div>
       </>
     ),
-    [activeKey, onJump], // 🚀 依赖项精简为 activeKey，只有高亮项变了才会重绘，性能拉满
+    [activeKey, onJump, t],
   );
 
   return (
