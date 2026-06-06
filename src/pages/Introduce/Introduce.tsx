@@ -1,50 +1,159 @@
-import { Card } from "antd";
+import { Card, Avatar, Input, Select, Space } from "antd";
+import {
+  ClockCircleOutlined,
+  UserOutlined,
+  TeamOutlined,
+  SearchOutlined,
+  FilterOutlined,
+} from "@ant-design/icons";
+import { useState, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import styles from "./Introduce.module.less";
 import { MOCK_CLASS_LIST } from "./indexMock";
 
-// （MOCK_CLASS_LIST 数据保持不变，依然用上一轮的数据源）
+const MAX_VISIBLE_STUDENTS = 4;
 
 export const Introduce = () => {
-  return (
-    <div className={styles.introduceContainer}>
-      {/* 🚀 外层变成 Grid 布局，卡片之间更加紧凑 */}
-      {MOCK_CLASS_LIST.map((cls) => (
-        <Card 
-          key={cls.id} 
-          title={<span className={styles.cardTitle}>{cls.level} · {cls.room}</span>}
-          className={styles.denseCard}
-          size="small" // 🚀 开启 Antd 的小号紧凑紧凑模式
-        >
-          <div className={styles.denseContent}>
-            {cls.sessions.map((session, index) => (
-              <div key={index} className={styles.sessionLine}>
-                
-                {/* 👑 顶部紧凑栏：类型徽章 + 老师 + 时间 */}
-                <div className={styles.sessionHeader}>
-                  <span className={`${styles.badge} ${styles[session.type]}`}>
-                    {session.type.slice(0, 4)} {/* 简写文字如 Gram / Comu 提升密度 */}
-                  </span>
-                  <span className={styles.teacherInfo}>Prof: <strong>{session.teacher}</strong></span>
-                  <span className={styles.timeInfo}>{session.time}</span>
-                </div>
-                
-                {/* 👑 底部紧凑栏：学生名单扁平化紧凑排列 */}
-                <div className={styles.studentsRow}>
-                  <span className={styles.studentLabel}>Stus:</span>
-                  <div className={styles.studentTags}>
-                    {session.students.map((student, sIdx) => (
-                      <span key={sIdx} className={styles.miniTag}>
-                        {student}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+  const { t } = useTranslation();
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedType, setSelectedType] = useState<string>("all");
+  const [expandedMap, setExpandedMap] = useState<Record<string, boolean>>({});
 
-              </div>
-            ))}
-          </div>
-        </Card>
-      ))}
+  const toggleStudents = (key: string) => {
+    setExpandedMap((prev) => ({ ...prev, [key]: !prev[key] }));
+  };
+
+  // 1. 动态生成提取多语言下拉菜单的选项集合
+  const typeOptions = useMemo(() => {
+    const types = new Set<string>();
+    MOCK_CLASS_LIST.forEach((room) =>
+      room.sessions.forEach((s) => s.type && types.add(s.type))
+    );
+    return [
+      { value: "all", label: t("home.content.All") || "All Courses" },
+      ...Array.from(types).map((type) => ({
+        value: type,
+        label: t(`guide.${type}`) || type.toUpperCase(),
+      })),
+    ];
+  }, [t]);
+
+  // 2. 核心链式计算：多维度复合检索过滤逻辑
+  const filteredClassList = useMemo(() => {
+    const query = searchQuery.trim().toLowerCase();
+
+    return MOCK_CLASS_LIST.map((room) => {
+      // 匹配卡片层级属性（级别或教室）
+      const isRoomMatched =
+        room.level.toLowerCase().includes(query) ||
+        room.room.toLowerCase().includes(query);
+
+      // 深度匹配子日程层级属性（老师、单人姓名或类型）
+      const filteredSessions = room.sessions.filter((session) => {
+        const isTypeMatched = selectedType === "all" || session.type === selectedType;
+        if (!isTypeMatched) return false;
+
+        if (!query) return true; // 未启用文本检索时直接保留
+
+        const isTeacherMatched = session.teacher.toLowerCase().includes(query);
+        const isStudentMatched = session.students.some((student) =>
+          student.toLowerCase().includes(query)
+        );
+
+        return isRoomMatched || isTeacherMatched || isStudentMatched;
+      });
+
+      return { ...room, sessions: filteredSessions };
+    }).filter((room) => room.sessions.length > 0); // 隐藏过滤后无内容的空教室
+  }, [searchQuery, selectedType]);
+
+  return (
+    <div className={styles.pageWrapper}>
+      {/* 🔍 顶层控制面板区域 */}
+      <div className={styles.filterBar}>
+        <Space size="middle" className={styles.filterSpace}>
+          <Input
+            prefix={<SearchOutlined className={styles.searchIcon} />}
+            placeholder={t("home.banner.searchPlaceholder") || "Enter your name, room or level..."}
+            allowClear
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className={styles.searchInput}
+          />
+          <Select
+            suffixIcon={<FilterOutlined />}
+            value={selectedType}
+            onChange={setSelectedType}
+            options={typeOptions}
+            className={styles.typeSelect}
+          />
+        </Space>
+      </div>
+
+      {/* 🗂️ 看板数据网格层级 */}
+      <div className={styles.container}>
+        {filteredClassList.map((room) => (
+          <Card key={room.id} className={styles.roomCard} size="small">
+            <div className={styles.roomHeader}>
+              <div className={styles.roomTitle}>{room.level}</div>
+              <div className={styles.roomName}>{room.room}</div>
+            </div>
+
+            <div className={styles.sessions}>
+              {room.sessions.map((session, index) => {
+                const sessionKey = `${room.id}-${index}`;
+                const expanded = expandedMap[sessionKey];
+                
+                const students = expanded
+                  ? session.students
+                  : session.students.slice(0, MAX_VISIBLE_STUDENTS);
+
+                return (
+                  <div
+                    key={sessionKey}
+                    className={`${styles.sessionCard} ${styles[session.type] || ""}`}
+                  >
+                    <div className={styles.sessionTop}>
+                      <div className={styles.time}>
+                        <ClockCircleOutlined />
+                        {session.time}
+                      </div>
+                      <div className={styles.teacher}>{session.teacher}</div>
+                    </div>
+
+                    <div className={styles.students}>
+                      {students.map((student, studentIndex) => (
+                        <div key={studentIndex} className={styles.student}>
+                          <Avatar size={18} icon={<UserOutlined />} />
+                          <span>{student}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {session.students.length > MAX_VISIBLE_STUDENTS && (
+                      <button
+                        className={styles.expandBtn}
+                        onClick={() => toggleStudents(sessionKey)}
+                      >
+                        {expanded
+                          ? t("home.content.ShowLess") || "Show Less"
+                          : `+${session.students.length - MAX_VISIBLE_STUDENTS} ${t("home.content.More") || "More"}`}
+                      </button>
+                    )}
+
+                    <div className={styles.footer}>
+                      <TeamOutlined />
+                      <span>
+                        {session.students.length} {t("home.content.Students") || "Students"}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </Card>
+        ))}
+      </div>
     </div>
   );
 };

@@ -4,6 +4,8 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 
 import zhTranslation from './zh.json';
 import esTranslation from './es.json';
+import enTranslation from './en.json';
+import ruTranslation from './ru.json';
 
 i18n
   // 🚀 自动检测浏览器/系统语言
@@ -13,7 +15,9 @@ i18n
   .init({
     resources: {
       zh: { translation: zhTranslation },
-      es: { translation: esTranslation }
+      es: { translation: esTranslation },
+      en: { translation: enTranslation },
+      ru: { translation: ruTranslation },
     },
     fallbackLng: 'zh', // 检测失败时的兜底语言
     debug: false,

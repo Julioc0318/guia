@@ -6,7 +6,7 @@ import {
   BANNER_DESC_ENUM,
   BANNER_SRC_ENUM,
 } from "./bannerType";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 export const Banner = () => {
   // 1. 定义 Banner 数据的本地静态数组
@@ -36,6 +36,8 @@ export const Banner = () => {
       src: BANNER_SRC_ENUM.BANNER_4,
     },
   ];
+
+  const { t } = useTranslation();
 
   return (
     <div className={styles.banner}>

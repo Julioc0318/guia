@@ -10,11 +10,9 @@
     width: 100%;
     height: 1px;
     margin: calc(var(--basic-font-size) * 0.75) 0;
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.45),
-      rgba(203, 213, 225, 0.12)
-    );
+    background: linear-gradient(90deg,
+        rgba(255, 255, 255, 0.45),
+        rgba(203, 213, 225, 0.12));
   }
 
   .information {
@@ -35,21 +33,38 @@
 
     .contactRow {
       display: grid;
-      grid-template-columns: calc(var(--basic-font-size) * 2.5) 1fr;
-      column-gap: calc(var(--basic-font-size) * 0.2);
+      /* 🚀 核心修复：第一列动态适应文字长度，保证多语言文字不变形、不溢出 */
+      grid-template-columns: minmax(calc(var(--basic-font-size) * 2.5), max-content) 1fr;
+      column-gap: calc(var(--basic-font-size) * 0.4);
+      /* 适当加大列间距，增强多语言排版呼吸感 */
       align-items: baseline;
       text-align: left;
+      width: 100%;
+      /* 确保撑满父容器 */
+
+      /* 横屏手机 / 小平板 [481px - 768px] */
+      @media (max-width: 768px) {
+        /* 🚀 移动端深度优化：多语言文字极长时自动切换为上下两行垂直排列，彻底根治重叠 */
+        display: flex;
+        flex-direction: column;
+        gap: calc(var(--basic-font-size) * 0.15);
+        margin-bottom: calc(var(--basic-font-size) * 0.3);
+      }
     }
 
     .label {
       color: rgba(255, 255, 255, 0.95);
+      white-space: nowrap;
+      /* 🚀 确保标签文本（如"地址:"）在单行完整显示不折行 */
     }
 
     .value {
       font-weight: lighter;
+      word-break: break-word;
+      /* 🚀 确保超长文本或非标准地址能够正常流式折行 */
     }
 
-    > div:last-child {
+    >div:last-child {
       color: var(--light-grey);
       font-size: calc(var(--basic-font-size) / 1.65);
       letter-spacing: 0.05em;

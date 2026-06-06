@@ -3,13 +3,13 @@
     "home": "Inicio",
     "clase": "Clase",
     "bank": "Banco",
-    "aboutUs": "Sobre Nosotros"
+    "aboutUs": "Sobre Nos"
   },
   "footer": {
     "tele": "Teléfono",
     "addr": "Dirección",
     "email": "Email",
-    "copyright": "Copyright"
+    "copyright": "© 2026 Colegio Delibes Student Hub. Todos los derechos reservados."
   },
   "home": {
     "banner": {
@@ -31,7 +31,7 @@
       "Clase": "Clase",
       "Bank": "Banco",
       "NIE": "NIE",
-      "aboutUs": "Sobre Nosotros",
+      "aboutUs": "Sobre Nos",
       "Under": "En",
       "Construction": "Construcción"
     }

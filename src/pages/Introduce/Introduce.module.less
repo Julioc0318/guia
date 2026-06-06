@@ -1,130 +1,201 @@
-.introduceContainer {
+.container {
   display: grid;
-  /* 🚀 稍微加大卡片的最小宽度（从18倍扩大到22倍），让一行的内容有更充裕的横向延展空间 */
-  grid-template-columns: repeat(auto-fit, minmax(calc(var(--basic-font-size) * 22), 1fr));
-  gap: calc(var(--basic-font-size) * 1.2); /* 🚀 增加卡片与卡片之间的呼吸间距 */
-  padding: calc(var(--basic-font-size) * 1.2);
+  /* 🚀 基准卡片宽度从 420px 放大至流式等值，给长西语人名留足空间 */
+  grid-template-columns: repeat(auto-fill, minmax(calc(var(--basic-font-size) * 28), 1fr));
+  gap: calc(var(--basic-font-size) * 1.25);
 }
 
-.denseCard {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: calc(var(--basic-font-size) * 0.6); /* 稍微圆润一点，增加精致感 */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02); /* 加一点点微弱的阴影，让它脱离背景，减轻死板感 */
-  
-  :global(.ant-card-head) {
-    min-height: calc(var(--basic-font-size) * 2.4); /* 🚀 拉开标题栏高度 */
-    padding: 0 calc(var(--basic-font-size) * 0.8);
-    background: #f8fafc;
-    border-bottom: 1px solid #f1f5f9;
-  }
+.roomCard {
+  border-radius: calc(var(--basic-font-size) * 1);
+
   :global(.ant-card-body) {
-    padding: calc(var(--basic-font-size) * 0.8) !important; /* 🚀 增加内部四周的留白 */
+    /* 🚀 增大卡片整体内衬 */
+    padding: calc(var(--basic-font-size) * 1.25);
   }
 }
 
-.cardTitle {
-  font-size: calc(var(--basic-font-size) * 1); /* 🚀 恢复到 1.0 标准字号，强化班级大标题 */
-  font-weight: 800;
-  color: #0f172a;
+.roomHeader {
+  margin-bottom: calc(var(--basic-font-size) * 1);
 }
 
-.denseContent {
+.roomTitle {
+  /* 🚀 放大标题，拉开绝对视觉层级 */
+  font-size: calc(var(--basic-font-size) * 1.4);
+  font-weight: 700;
+  color: var(--dark-blue);
+}
+
+.roomName {
+  font-size: calc(var(--basic-font-size) * 0.9);
+  color: var(--dark-grey);
+}
+
+/* sessions */
+.sessions {
   display: flex;
   flex-direction: column;
-  gap: calc(var(--basic-font-size) * 0.8); /* 🚀 增加两个课程块之间的上下距离 */
+  gap: calc(var(--basic-font-size) * 0.75);
 }
 
-.sessionLine {
+/* session card */
+.sessionCard {
+  border-radius: calc(var(--basic-font-size) * 0.75);
+  padding: calc(var(--basic-font-size) * 0.75) calc(var(--basic-font-size) * 1);
+  background: #ffffff;
+  transition: all 0.2s ease;
+  border-left: 4px solid var(--light-blue);
+}
+
+.sessionCard:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* header */
+.sessionTop {
   display: flex;
-  flex-direction: column;
-  gap: calc(var(--basic-font-size) * 0.4); /* 🚀 增加课程报头和学生名字之间的间距 */
-  padding-bottom: calc(var(--basic-font-size) * 0.6);
-  border-bottom: 1px solid #f1f5f9;
-
-  &:last-child {
-    padding-bottom: 0;
-    border-bottom: none;
-  }
+  justify-content: space-between;
+  margin-bottom: calc(var(--basic-font-size) * 0.6);
 }
 
-/* 一行式紧凑报头 */
-.sessionHeader {
+.time {
   display: flex;
   align-items: center;
-  font-size: calc(var(--basic-font-size) * 0.85); /* 🚀 稍微加大字号，更清晰 */
-  gap: calc(var(--basic-font-size) * 0.5);
-}
-
-/* 迷你精致徽章 */
-.badge {
-  font-size: calc(var(--basic-font-size) * 0.7);
-  font-weight: 700;
-  padding: calc(var(--basic-font-size) * 0.1) calc(var(--basic-font-size) * 0.35); /* 增加徽章内衬，不那么缩巴 */
-  border-radius: calc(var(--basic-font-size) * 0.25);
-  text-transform: uppercase;
-  
-  &.Gramática { background: #e0f2fe; color: #0369a1; }
-  &.Comunicación { background: #dcfce7; color: #15803d; }
-  &.DELE { background: #fef3c7; color: #b45309; }
-}
-
-.teacherInfo {
-  color: #334155;
-  flex: 1;
-  
-  strong {
-    color: #0f172a; /* 🚀 让老师的名字颜色更深，强化重点 */
-  }
-}
-
-.timeInfo {
-  color: #64748b; /* 稍微加深时间的颜色 */
-  font-weight: 500;
-  font-variant-numeric: tabular-nums;
-}
-
-/* 学生平铺行 */
-.studentsRow {
-  display: flex;
-  align-items: flex-start;
   gap: calc(var(--basic-font-size) * 0.4);
-  font-size: calc(var(--basic-font-size) * 0.78); /* 🚀 稍微调大一丢丢字号 */
+  font-weight: 600;
+  font-size: calc(var(--basic-font-size) * 0.85); /* 🚀 适当放大 */
+  color: var(--dark-blue);
 }
 
-.studentLabel {
-  color: #94a3b8;
-  font-weight: bold;
-  margin-top: calc(var(--basic-font-size) * 0.05);
+.teacher {
+  font-size: calc(var(--basic-font-size) * 0.9); /* 🚀 适当放大 */
+  font-weight: 600;
+  color: var(--dark-blue);
 }
 
-.studentTags {
+/* students */
+.students {
   display: flex;
   flex-wrap: wrap;
-  gap: calc(var(--basic-font-size) * 0.2); /* 🚀 拉开人名与人名之间的距离 */
-  
-  max-height: calc(var(--basic-font-size) * 3.5); /* 🚀 允许的高度稍微放宽 */
-  overflow-y: auto;
-  padding-right: calc(var(--basic-font-size) * 0.1);
+  gap: calc(var(--basic-font-size) * 0.5);
+  margin-bottom: calc(var(--basic-font-size) * 0.5);
+}
 
-  &::-webkit-scrollbar {
-    width: calc(var(--basic-font-size) * 0.15);
+.student {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--basic-font-size) * 0.4);
+  padding: calc(var(--basic-font-size) * 0.25) calc(var(--basic-font-size) * 0.5); /* 🚀 增加内衬 */
+  border-radius: calc(var(--basic-font-size) * 2);
+  background: var(--light-grey);
+  font-size: calc(var(--basic-font-size) * 0.75);
+  color: var(--dark-grey);
+}
+
+/* expand button */
+.expandBtn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: calc(var(--basic-font-size) * 0.75);
+  font-weight: 600;
+  color: var(--light-blue);
+  margin-bottom: calc(var(--basic-font-size) * 0.6);
+  display: flex;
+  align-items: center;
+  gap: calc(var(--basic-font-size) * 0.25);
+}
+
+/* footer */
+.footer {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--basic-font-size) * 0.4);
+  font-size: calc(var(--basic-font-size) * 0.75);
+  color: var(--dark-grey);
+}
+.pageWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--basic-font-size) * 1.25);
+}
+
+/* 🔍 顶层控制面板布局容器 */
+.filterBar {
+  width: 100%;
+  background: var(--dark-blue);
+  padding: calc(var(--basic-font-size) * 0.75) calc(var(--basic-font-size) * 1.25);
+  box-sizing: border-box;
+
+  .filterSpace {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: stretch;
+      width: 100%;
+    }
   }
-  &::-webkit-scrollbar-thumb {
-    background: #e2e8f0;
-    border-radius: calc(var(--basic-font-size) * 0.1);
+
+  /* 增强搜索框体积与流式缩放 */
+  .searchInput {
+    width: calc(var(--basic-font-size) * 20);
+    height: calc(var(--basic-font-size) * 2.4);
+    border-radius: calc(var(--basic-font-size) * 0.4);
+    font-size: calc(var(--basic-font-size) * 0.85);
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  /* 增强下拉筛选器的流式体积 */
+  .typeSelect {
+    width: calc(var(--basic-font-size) * 10);
+    height: calc(var(--basic-font-size) * 2.4);
+    
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
+    :global {
+      .ant-select-selector {
+        height: 100% !important;
+        align-items: center !important;
+        border-radius: calc(var(--basic-font-size) * 0.4) !important;
+        font-size: calc(var(--basic-font-size) * 0.85) !important;
+      }
+    }
+  }
+
+  .searchIcon {
+    color: var(--dark-grey);
+    font-size: calc(var(--basic-font-size) * 0.9);
   }
 }
 
-/* 自定义微型文本块 */
-.miniTag {
-  background: #f8fafc;
-  color: #475569; /* 文字颜色稍微变柔和 */
-  padding: calc(var(--basic-font-size) * 0.05) calc(var(--basic-font-size) * 0.25); /* 🚀 增加气泡内部的横向留白 */
-  border-radius: calc(var(--basic-font-size) * 0.2);
-  font-size: calc(var(--basic-font-size) * 0.72);
-  line-height: 1.4;
-  /* 👑 核心优化：去掉刺眼的 1px border 边框，改用纯干净的低饱和度背景，视觉上瞬间消除了大片黑网格感，干净极了！ */
-  border: none; 
-  white-space: nowrap; 
+/* 语法课 / 常规课 */
+.regular {
+  border-left-color: var(--light-blue);
+  background: rgba(59, 130, 246, 0.05); /* 🚀 5% 蓝 */
+}
+
+/* 口语课 / 交流课 */
+.conversation {
+  border-left-color: #22c55e;
+  background: rgba(34, 197, 94, 0.05);  /* 🚀 5% 绿 */
+}
+
+/* DELE / 备考实验课 */
+.lab {
+  border-left-color: var(--mid-orange);
+  background: rgba(245, 158, 11, 0.05); /* 🚀 5% 橙 */
+}
+
+/* 文化课 */
+.culture {
+  border-left-color: #a855f7;
+  background: rgba(168, 85, 247, 0.05);  /* 🚀 5% 紫 */
 }
