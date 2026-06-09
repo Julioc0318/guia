@@ -11,6 +11,15 @@ export const MOCK_CLASS_LIST: ClassCardData[] = [
     ]
   },
   {
+    id: "class-a122",
+    level: "A1",
+    room: "ROOM 108",
+    sessions: [
+      { type: "Gramática", time: "09:00 - 11:00", teacher: "ANA", students: ["Weidang Chen", "Reyes", "John Doe", "Alejandro", "Yuki Tanaka", "Maximilian"] },
+      { type: "Comunicación", time: "11:00 - 13:00", teacher: "REYES", students: ["Weidang Chen", "Anton", "Maria", "Li Ming", "Zhang San", "Lucas", "Isabella", "Mateo", "Sophie"] }
+    ]
+  },
+  {
     id: "class-a21",
     level: "A2.1",
     room: "ROOM 203",
@@ -101,12 +110,4 @@ export const MOCK_CLASS_LIST: ClassCardData[] = [
       { type: "DELE", time: "11:00 - 13:00", teacher: "MANUEL", students: ["Peter Parker", "Gwen Stacy", "Miles Morales", "Harry Osborn"] }
     ]
   },
-  {
-    id: "class-culture",
-    level: "Cultura",
-    room: "SALÓN",
-    sessions: [
-      { type: "Comunicación", time: "16:00 - 17:30", teacher: "ALEJANDRO", students: ["Open Class"] }
-    ]
-  }
 ];

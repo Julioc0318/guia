@@ -15,9 +15,9 @@ export const BANNER_TITLE_ENUM = {
 // 2. 👑 用 const 对象平替 BANNER_DESC_ENUM
 export const BANNER_DESC_ENUM = {
   BANNER_1: "home.banner.bannerDes.1",
-  BANNER_2: "home.banner.bannerDes.1",
-  BANNER_3: "home.banner.bannerDes.1",
-  BANNER_4: "home.banner.bannerDes.1",
+  BANNER_2: "home.banner.bannerDes.2",
+  BANNER_3: "home.banner.bannerDes.3",
+  BANNER_4: "home.banner.bannerDes.4",
 };
 
 // 3. 动态提取类型（如果你需要将这些值作为单独的 TS 类型使用）

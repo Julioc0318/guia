@@ -1,10 +1,10 @@
 /* src/router/index.tsx */
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import { Home } from "@/pages/Home/Home";
-import { Introduce } from "@/pages/Introduce/Introduce";
 import { Guide } from "@/pages/Guide/Guide";
 import { Contact } from "@/pages/Contact/Contact";
 import { RootLayout } from "@/components/Layout";
+import { Clase } from "@/pages/Clase";
 
 const baseName = import.meta.env.BASE_URL;
 
@@ -20,7 +20,7 @@ export const router = createBrowserRouter(
         },
         {
           path: "/clase", // 对应介绍页 (域名/仓库名/introduce)
-          element: <Introduce />,
+          element: <Clase />,
         },
         {
           path: "/bank", // 对应指南页 (域名/仓库名/guide)

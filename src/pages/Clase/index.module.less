@@ -1,0 +1,254 @@
+.theaterWrapper {
+  box-sizing: border-box;
+  padding: calc(0.5 * var(--basic-padding)) var(--basic-padding);
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--basic-font-size) * 1);
+  width: 100%;
+}
+
+.mainConsole {
+  display: flex;
+  gap: calc(var(--basic-font-size) * 1.25);
+  width: 100%;
+  align-items: flex-start;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* 🚪 左侧导航总外壳 */
+.sidebarMenu {
+  flex: 0 0 calc(var(--basic-font-size) * 12);
+  background: #ffffff;
+  border-radius: calc(var(--basic-font-size) * 0.75);
+  border: 1px solid var(--light-grey);
+  box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    flex: none;
+    border-radius: calc(var(--basic-font-size) * 0.5);
+  }
+}
+
+/* 💻 PC 侧边平铺容器 */
+.pcMenuList {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--basic-font-size) * 0.4);
+  padding: calc(var(--basic-font-size) * 0.6);
+
+  @media (max-width: 768px) {
+    display: none; // 🚀 手机端直接隐藏
+  }
+
+  .menuBtn {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--basic-font-size) * 0.5);
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: calc(var(--basic-font-size) * 0.6) calc(var(--basic-font-size) * 0.8);
+    border-radius: calc(var(--basic-font-size) * 0.4);
+    text-align: left;
+    font-size: calc(var(--basic-font-size) * 0.85);
+    font-weight: 700;
+    color: var(--dark-grey);
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    .roomDot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--mid-grey);
+    }
+
+    &:hover {
+      background: var(--light-grey);
+      color: var(--light-blue);
+    }
+  }
+
+  .btnActive {
+    background: rgba(59, 130, 246, 0.08) !important;
+    color: var(--light-blue) !important;
+
+    .roomDot {
+      background: var(--light-blue);
+      box-shadow: 0 0 8px var(--light-blue);
+    }
+  }
+}
+
+/* 📱 移动端精美翻页器 */
+.mobilePager {
+  display: none; // 🚀 默认隐藏，只有手机端才现身
+  align-items: center;
+  justify-content: space-between;
+  padding: calc(var(--basic-font-size) * 0.5);
+  width: 100%;
+  box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    display: flex; 
+  }
+
+  .pagerTitle {
+    font-size: calc(var(--basic-font-size) * 0.85);
+    font-weight: 800;
+    color: var(--dark-blue);
+  }
+
+  .pagerArrow {
+    border: none;
+    background: var(--light-grey);
+    color: var(--dark-blue);
+    width: calc(var(--basic-font-size) * 2);
+    height: calc(var(--basic-font-size) * 2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+  }
+}
+
+/* 📺 右侧核心视窗 */
+.stageViewport {
+  flex: 1;
+  background: #ffffff;
+  border-radius: calc(var(--basic-font-size) * 0.75);
+  border: 1px solid var(--light-grey);
+  padding: calc(var(--basic-font-size) * 1.25);
+  box-sizing: border-box;
+}
+
+.roomContainer {
+  width: 100%;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.stageHeader {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--basic-font-size) * 0.6);
+  margin-bottom: calc(var(--basic-font-size) * 1);
+  border-bottom: 1px solid var(--light-grey);
+  padding-bottom: calc(var(--basic-font-size) * 0.5);
+
+  h4 {
+    font-size: calc(var(--basic-font-size) * 1.2);
+    font-weight: 800;
+    color: var(--dark-blue);
+    margin: 0;
+  }
+
+  .liveBadge {
+    font-size: calc(var(--basic-font-size) * 0.6);
+    background: #ef4444;
+    color: white;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-weight: 800;
+  }
+}
+
+.sessionsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: calc(0.4 * var(--basic-padding));
+}
+
+.sessionCard {
+  border-radius: calc(var(--basic-font-size) * 0.6);
+  padding: calc(var(--basic-font-size) * 0.8);
+  box-sizing: border-box;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  border: 1px solid var(--light-grey);
+  border-left: 4px solid var(--light-blue);
+}
+
+.sessionTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: calc(var(--basic-font-size) * 0.6);
+
+  .timeTag {
+    font-size: calc(var(--basic-font-size) * 0.75);
+    font-weight: 700;
+    color: var(--dark-blue);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .teacherName {
+    font-size: calc(var(--basic-font-size) * 0.8);
+    font-weight: 700;
+    color: var(--dark-blue);
+  }
+}
+
+.studentFlow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--basic-font-size) * 0.3);
+  margin-bottom: calc(var(--basic-font-size) * 0.4);
+}
+
+.studentBubble {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: calc(var(--basic-font-size) * 0.15) calc(var(--basic-font-size) * 0.4);
+  border-radius: calc(var(--basic-font-size) * 1);
+  background: var(--light-grey);
+  font-size: calc(var(--basic-font-size) * 0.7);
+  color: var(--dark-grey);
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: calc(var(--basic-font-size) * 0.65);
+  color: var(--mid-grey);
+}
+
+.emptyStage {
+  color: var(--mid-grey);
+  font-style: italic;
+  font-size: calc(var(--basic-font-size) * 0.85);
+  text-align: center;
+  padding: calc(var(--basic-font-size) * 4) 0;
+}
+
+.Gramática, .regular {
+  border-left-color: #3b82f6;
+  background: rgba(59, 130, 246, 0.02);
+}
+.Comunicación {
+  border-left-color: #22c55e;
+  background: rgba(34, 197, 94, 0.02);
+}
+.DELE {
+  border-left-color: var(--mid-orange, #f97316);
+  background: rgba(249, 115, 22, 0.02);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
