@@ -1,19 +1,22 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./index.module.less";
+import { BasicTitle } from "@/components/BasicTitle";
+import imgSrc from "@/assets/Guide/BBVA.png";
 
 export const Guide: React.FC = () => {
   const { t } = useTranslation();
 
   return (
     <div className={styles.guideWrapper}>
+      <BasicTitle
+        imgSrc={imgSrc}
+        titleText={t("guide.title")}
+        desc={t("guide.desc")}
+        author={"GO.DELIBES"}
+        time={Date.parse("2026-06-09")}
+      />
       <div className={styles.guideCard}>
-        {/* 头部横幅 */}
-        <div className={styles.headerBanner}>
-          <h1 className={styles.mainTitle}>{t("guide.title")}</h1>
-          <p className={styles.subDescription}>{t("guide.desc")}</p>
-        </div>
-
         {/* 核心步骤时间线 */}
         <div className={styles.stepsContainer}>
           <div className={styles.stepNode}>

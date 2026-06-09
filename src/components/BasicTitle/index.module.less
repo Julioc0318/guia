@@ -1,0 +1,73 @@
+.basicTitle {
+  position: relative;
+  width: 100%; // 确保父容器宽度正常
+
+  .img {
+    width: 100%;
+    max-height: 600px;
+    aspect-ratio: 5 / 2;
+    object-fit: cover;
+    filter: brightness(0.4);
+    object-position: center center;
+    position: relative;
+    display: block; // 消除图片底部默认的微小间隙
+  }
+
+  .textArea {
+    position: absolute;
+    top: 40%; // 🚀 纵向：先向下偏移 50%
+    transform: translateY(
+      -50%
+    ); // 🚀 纵向：向上反向推自身高度的 50%，实现完美垂直居中
+
+    // 📐 宽度与边距核心配置
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 0 calc(var(--basic-font-size) * 1.5); // 🚀 左右两侧对齐留出边距（可根据需要调整大小）
+    box-sizing: border-box; // 🚀 极为重要：确保 padding 不会撑破 100% 的总宽度
+
+    .title {
+      // 🔤 文字排版
+      text-align: center; // 🚀 真正让单行或多行文字在内部水平居中
+      color: white;
+      font-family: var(--font-display);
+      font-size: calc(var(--basic-font-size) * 3);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      white-space: normal; // 🚀 允许长文本正常自动换行
+      z-index: 100;
+    }
+    .desc {
+      margin-top: calc(2 * var(--basic-font-size));
+      font-weight: 500; // 比 lighter 更有精准控制力的细体
+      font-size: calc(var(--basic-font-size) * 1.15);
+      color: var(--light-grey); // 核心：副标题颜色微微调淡，瞬间拉开主次层级
+      line-height: 1.6; // 正文行高要放开，极大地提高阅读舒适度
+      letter-spacing: 0.05em;
+      // 【高级修复】：去掉死板的 nowrap，改用现代网页的多行文本截断
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      // 细体字稍微拉开一点字间距，呼吸感极佳
+      white-space: pre-line;
+      // -webkit-line-clamp: 2;            // 最多显示 2 行，超过 2 行自动变成省略号 ...
+      // overflow: hidden;
+    }
+  }
+
+  .authorAndTime {
+    position: absolute;
+    bottom: var(--basic-font-size);
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 0 calc(var(--basic-font-size) * 1.5); // 🚀 左右两侧对齐留出边距（可根据需要调整大小）
+    box-sizing: border-box; // 🚀 极为重要：确保 padding 不会撑破 100% 的总宽度
+    margin-top: calc(2 * var(--basic-font-size));
+    display: flex;
+    gap: calc(var(--basic-font-size) * 0.5);
+    justify-content: center;
+    color: var(--light-grey);
+  }
+}

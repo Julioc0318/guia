@@ -30,10 +30,10 @@ export const Introduce = () => {
       room.sessions.forEach((s) => s.type && types.add(s.type))
     );
     return [
-      { value: "all", label: t("home.content.All") || "All Courses" },
+      { value: "all", label: t("clase.allContent") },
       ...Array.from(types).map((type) => ({
         value: type,
-        label: t(`guide.${type}`) || type.toUpperCase(),
+        label: t(`clase.${type}`) || type.toUpperCase(),
       })),
     ];
   }, [t]);
@@ -74,7 +74,7 @@ export const Introduce = () => {
         <Space size="middle" className={styles.filterSpace}>
           <Input
             prefix={<SearchOutlined className={styles.searchIcon} />}
-            placeholder={t("home.banner.searchPlaceholder") || "Enter your name, room or level..."}
+            placeholder={t("clase.searchPlaceHolder")}
             allowClear
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
@@ -136,15 +136,15 @@ export const Introduce = () => {
                         onClick={() => toggleStudents(sessionKey)}
                       >
                         {expanded
-                          ? t("home.content.ShowLess") || "Show Less"
-                          : `+${session.students.length - MAX_VISIBLE_STUDENTS} ${t("home.content.More") || "More"}`}
+                          ? t("clase.showLess")
+                          : `+${session.students.length - MAX_VISIBLE_STUDENTS} ${t("clase.showMore") || "More"}`}
                       </button>
                     )}
 
                     <div className={styles.footer}>
                       <TeamOutlined />
                       <span>
-                        {session.students.length} {t("home.content.Students") || "Students"}
+                        {session.students.length} {t("clase.students")}
                       </span>
                     </div>
                   </div>
