@@ -1,0 +1,16 @@
+@SIZE: var(--size);
+@GAP: calc(0.2 * @SIZE);
+
+.exploreCity {
+    margin-bottom: @SIZE;
+  .cards {
+    display: flex;
+    gap: @GAP;
+    .smallCards {
+      display: flex;
+      flex-direction: column;
+      gap: @GAP;
+    }
+    margin-right: @GAP;
+  }
+}

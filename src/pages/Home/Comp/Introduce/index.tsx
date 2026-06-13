@@ -1,7 +1,11 @@
 import { Button } from "@/components/Button";
 import styles from "./index.module.less";
 
-export const Introduce = () => {
+export const Introduce = ({
+  onExploreClick,
+}: {
+  onExploreClick: () => void;
+}) => {
   return (
     <div className={styles.introduce}>
       <h3 className={styles.title}>
@@ -14,7 +18,7 @@ export const Introduce = () => {
         我们将复杂的西国生存碎片化繁为简，转化为清晰、直观的现代化卡片指引。
       </span>
       <div className={styles.buttonArea}>
-        <Button>探索城市</Button>
+        <Button onClick={onExploreClick}>探索城市</Button>
         <Button variant="secondary">查看学院</Button>
       </div>
     </div>

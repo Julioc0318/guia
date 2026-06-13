@@ -1,4 +1,20 @@
 .home {
     background: var(--dark-blue);
     height: 100%;
+
+    .exploreWrapper {
+        transition: opacity 0.8s ease-in-out;
+        
+        &.hidden {
+          opacity: 0;
+          pointer-events: none; // 隐藏时禁止交互
+          height: 0;            // 可选：如果不占位则添加
+          overflow: hidden;
+        }
+        
+        &.visible {
+          opacity: 1;
+          height: auto;
+        }
+      }
 }

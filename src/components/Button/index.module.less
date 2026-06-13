@@ -1,4 +1,8 @@
-/* 2. 基础按钮公用样式 (Base) */
+@BUTTON_BORDER_COLOR: var(--button-border-color);
+@BUTTON_BG_COLOR: var(--button-background-color);
+@BUTTON_HOVER_BORDER_COLOR: var(--button-border-hover-color);
+
+/* 1. 基础按钮公用样式 (Base) */
 .btn-base {
   display: inline-flex;
   align-items: center;
@@ -28,13 +32,13 @@
 /* 3. 绿色高亮按钮 (Primary) */
 .btnPrimary {
   .btn-base;
-  background-color: var(--theme-color);
-  color: #ffffff;
+  border-color: @BUTTON_BORDER_COLOR;
+  background-color: @BUTTON_BG_COLOR;
   box-shadow: 0 2px 8px rgba(63, 207, 142, 0.2); // 淡淡的主题色呼吸阴影
 
   /* 悬停：颜色略微加深，阴影扩大 */
   &:hover:not(:disabled) {
-    background-color: var(--button-border-color);
+    border-color: @BUTTON_HOVER_BORDER_COLOR;
     box-shadow: 0 4px 14px rgba(22, 182, 116, 0.35);
   }
 }

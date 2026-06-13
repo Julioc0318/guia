@@ -1,0 +1,112 @@
+@BORDER_COLOR: var(--default-border-color);
+@FONT_SIZE: var(--font-size);
+@TEXT_FONT_SIZE: calc(0.8 * @FONT_SIZE);
+@SIZE: var(--size);
+@CARD_PADDING: calc(0.3 * @SIZE);
+@CARD_WIDTH: calc(4 * var(--size));
+@CARD_WIDTH_SMALL: calc(2 * var(--size));
+@FONT_COLOR: var(--font-color-lighter);
+@TITLE_FONT_WEIGHT: 800;
+@TEXT_FONT_WEIGHT: 500;
+@FONT_COLOR_HOVER: var(--default-font-color);
+@BORDER_COLOR_HOVER: var(--font-color-lighter);
+@FONT_COLOR_DISABLED: var(--font-disabled-color);
+@BACKGROUND_COLOR_DISABLED: var(--button-hover-background-color);
+
+.card {
+  width: @CARD_WIDTH;
+  border: 1px solid @BORDER_COLOR;
+  border-radius: calc(0.5 * @FONT_SIZE);
+  padding: @CARD_PADDING;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: @FONT_COLOR;
+  font-weight: @TITLE_FONT_WEIGHT;
+  transition: all 0.3s ease;
+  position: relative;
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+    gap: @SIZE;
+
+    span {
+      font-size: @FONT_SIZE;
+      margin-right: @FONT_SIZE;
+    }
+  }
+
+  .icon {
+    position: absolute;
+    top: @CARD_PADDING;
+    right: calc(0.8 * @CARD_PADDING);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease;
+  }
+
+  .text {
+    display: flex;
+    justify-content: left;
+    font-size: @TEXT_FONT_SIZE;
+    font-weight: @TEXT_FONT_WEIGHT;
+  }
+
+  &:hover {
+    color: @FONT_COLOR_HOVER;
+    // 1. 字体颜色变深 (原逻辑)
+    // 2. 边框颜色变浅 (使用 rgba 实现比 font color 更淡的效果，或者使用特定的浅色变量)
+    // 假设 --default-border-color 是灰色，我们这里调浅一点
+    border-color: @BORDER_COLOR_HOVER;
+
+    // 3. 增加边框阴影使其突出
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    cursor: pointer;
+
+    .icon {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.smallCard {
+  width: @CARD_WIDTH_SMALL;
+  height: calc(0.3 * @CARD_WIDTH_SMALL);
+  justify-content: center;
+
+  &:hover {
+    .icon {
+      display: none;
+    }
+  }
+  .title {
+    justify-content: center;
+    width: 100%;
+    gap: 0;
+    span {
+      margin-right: 0;
+    }
+  }
+  .icon {
+    display: none;
+  }
+}
+
+.disabled {
+  color: @FONT_COLOR_DISABLED;
+  background-color: @BACKGROUND_COLOR_DISABLED;
+
+  &:hover {
+    cursor: not-allowed;
+    color: @FONT_COLOR_DISABLED;
+    border-color: @BORDER_COLOR;
+    box-shadow: none;
+  }
+
+  .icon {
+    display: none;
+  }
+}

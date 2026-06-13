@@ -15,7 +15,7 @@
   /* 1. 颜色样式变量 */
   --default-border-color: #dfdfdf; /* 默认边框灰色 */
   --default-background-color: #fcfcfc; /* 默认背景灰色 */
---theme-color: #3fcf8e; /* 绿色主题色 */
+  --theme-color: #3fcf8e; /* 绿色主题色 */
   /* 文本颜色 */
   --default-font-color: #171717; /* 默认文本黑色 */
   --font-color-lighter: #707070; /* 浅文本灰色 */
@@ -27,8 +27,9 @@
   --button-hover-border-color: #cccccc;
   --button-text-color: #3fcf8e;
   --button-background-color: #72e3ad;
-  --button-border-color: #16b674;
+  --button-border-color: #07d786;
   --border-color: #dfdfdf;
+  --button-border-hover-color: #097c50;
   /* 2. 字体样式变量 */
   --default-font-family:
     "CustomFont", "Circular", "custom-font", "Helvetica Neue", Helvetica, Arial,
