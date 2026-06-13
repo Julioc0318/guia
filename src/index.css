@@ -15,7 +15,7 @@
   /* 1. 颜色样式变量 */
   --default-border-color: #dfdfdf; /* 默认边框灰色 */
   --default-background-color: #fcfcfc; /* 默认背景灰色 */
-  --main-theme-color: #3fcf8e; /* 绿色主题色 */
+--theme-color: #3fcf8e; /* 绿色主题色 */
   /* 文本颜色 */
   --default-font-color: #171717; /* 默认文本黑色 */
   --font-color-lighter: #707070; /* 浅文本灰色 */
@@ -36,42 +36,42 @@
     "Segoe UI Symbol", "Noto Color Emoji";
 
   /* 3. 默认尺寸变量和自适应 */
-  --basic-size: 120px;
-  --basic-font-size: 24px;
+  --size: 120px;
+  --font-size: 24px;
 
   @media (max-width: 1919px) and (min-width: 1441px) {
-    --basic-size: 90px;
-    --basic-font-size: 22px;
+    --size: 90px;
+    --font-size: 22px;
   }
 
   @media (max-width: 1440px) and (min-width: 1201px) {
-    --basic-size: 70px;
-    --basic-font-size: 19px;
+    --size: 70px;
+    --font-size: 19px;
   }
 
   @media (max-width: 1200px) and (min-width: 1025px) {
-    --basic-size: 50px;
-    --basic-font-size: 17px;
+    --size: 50px;
+    --font-size: 17px;
   }
 
   @media (max-width: 1024px) and (min-width: 769px) {
-    --basic-size: 35px;
-    --basic-font-size: 16px;
+    --size: 35px;
+    --font-size: 16px;
   }
 
   @media (max-width: 768px) and (min-width: 481px) {
-    --basic-size: 24px;
-    --basic-font-size: 14px;
+    --size: 24px;
+    --font-size: 14px;
   }
 
   @media (max-width: 480px) and (min-width: 376px) {
-    --basic-size: 16px;
-    --basic-font-size: 12px;
+    --size: 16px;
+    --font-size: 12px;
   }
 
   @media (max-width: 375px) {
-    --basic-size: 12px;
-    --basic-font-size: 11px; /* 避免设为 10px，部分浏览器在 12px 以下会有强制渲染硬伤 */
+    --size: 12px;
+    --font-size: 11px; /* 避免设为 10px，部分浏览器在 12px 以下会有强制渲染硬伤 */
   }
 }
 

@@ -38,6 +38,7 @@ export const LanguageSwitchMenu = () => {
 
   return (
     <div className={styles.langDropdown}>
+      <div className={styles.divider} />
       {/* 触发器：展示当前语言的圆形国旗和文字 */}
       <div className={styles.langTrigger}>
         <span className={styles.langText}>{currentConfig.label}</span>

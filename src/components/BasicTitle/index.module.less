@@ -24,7 +24,7 @@
     left: 0;
     right: 0;
     width: 100%;
-    padding: 0 calc(var(--basic-font-size) * 1.5);
+    padding: 0 calc(var(--font-size) * 1.5);
     box-sizing: border-box;
     @media (max-width: 768px) {
       top: 45%;
@@ -34,7 +34,7 @@
       text-align: center;
       color: white;
       font-family: var(--font-display);
-      font-size: calc(var(--basic-font-size) * 3);
+      font-size: calc(var(--font-size) * 3);
       font-weight: 900;
       line-height: 1.1;
       letter-spacing: -0.02em;
@@ -42,19 +42,19 @@
       z-index: 100;
       /* 横屏手机 / 小平板 [481px - 768px] */
       @media (max-width: 768px) and (min-width: 481px) {
-        font-size: calc(var(--basic-font-size) * 2.5);
+        font-size: calc(var(--font-size) * 2.5);
       }
 
       /* 大屏手机 [376px - 480px] (如 iPhone Max / Plus系列) */
       @media (max-width: 480px) {
-        font-size: calc(var(--basic-font-size) * 2);
+        font-size: calc(var(--font-size) * 2);
       }
     }
 
     .desc {
-      margin-top: calc(2 * var(--basic-font-size));
+      margin-top: calc(2 * var(--font-size));
       font-weight: 500; // 比 lighter 更有精准控制力的细体
-      font-size: calc(var(--basic-font-size) * 1.15);
+      font-size: calc(var(--font-size) * 1.15);
       color: var(--default-font-color); // 核心：副标题颜色微微调淡，瞬间拉开主次层级
       line-height: 1.6; // 正文行高要放开，极大地提高阅读舒适度
       letter-spacing: 0.05em;
@@ -66,33 +66,33 @@
       // -webkit-line-clamp: 2;            // 最多显示 2 行，超过 2 行自动变成省略号 ...
       // overflow: hidden;
       @media (max-width: 768px) and (min-width: 481px) {
-        margin-top: calc(var(--basic-font-size));
-        font-size: calc(var(--basic-font-size) * 1.2);
+        margin-top: calc(var(--font-size));
+        font-size: calc(var(--font-size) * 1.2);
       }
 
       /* 大屏手机 [376px - 480px] (如 iPhone Max / Plus系列) */
       @media (max-width: 480px) {
-        margin-top: calc(var(--basic-font-size));
-        font-size: calc(var(--basic-font-size) * 0.9);
+        margin-top: calc(var(--font-size));
+        font-size: calc(var(--font-size) * 0.9);
       }
     }
   }
 
   .authorAndTime {
     position: absolute;
-    bottom: var(--basic-font-size);
+    bottom: var(--font-size);
     left: 0;
     right: 0;
     width: 100%;
-    padding: 0 calc(var(--basic-font-size) * 1.5); // 🚀 左右两侧对齐留出边距（可根据需要调整大小）
+    padding: 0 calc(var(--font-size) * 1.5); // 🚀 左右两侧对齐留出边距（可根据需要调整大小）
     box-sizing: border-box; // 🚀 极为重要：确保 padding 不会撑破 100% 的总宽度
-    margin-top: calc(2 * var(--basic-font-size));
+    margin-top: calc(2 * var(--font-size));
     display: flex;
-    gap: calc(var(--basic-font-size) * 0.5);
+    gap: calc(var(--font-size) * 0.5);
     justify-content: center;
     color: var(--default-font-color);
     @media (max-width: 768px) {
-      font-size: calc(var(--basic-font-size) * 0.7);
+      font-size: calc(var(--font-size) * 0.7);
     }
   }
 }

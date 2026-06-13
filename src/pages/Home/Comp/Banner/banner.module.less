@@ -1,6 +1,6 @@
 .banner {
   cursor: default;
-  padding: 0px calc(var(--basic-size) * 2);
+  padding: 0px calc(var(--size) * 2);
   position: relative;
   background: linear-gradient(
     to bottom,
@@ -53,7 +53,7 @@
 
       h3 {
         font-family: var(--font-display);
-        font-size: calc(var(--basic-font-size) * 3);
+        font-size: calc(var(--font-size) * 3);
         margin: 0 0 12px 0; // 增加底部外边距，拉开和段落的呼吸感
         font-weight: 900;
         line-height: 1.1; // 大标题行高要缩紧，否则字与字之间太散
@@ -62,9 +62,9 @@
       }
 
       p {
-        margin-top: calc(2 * var(--basic-font-size));
+        margin-top: calc(2 * var(--font-size));
         font-weight: 500; // 比 lighter 更有精准控制力的细体
-        font-size: calc(var(--basic-font-size) * 1.15);
+        font-size: calc(var(--font-size) * 1.15);
         color: var(--default-font-color); // 核心：副标题颜色微微调淡，瞬间拉开主次层级
         line-height: 1.6; // 正文行高要放开，极大地提高阅读舒适度
         letter-spacing: 0.05em;

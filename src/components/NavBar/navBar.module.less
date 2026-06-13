@@ -1,12 +1,12 @@
-@logo-height-desktop: calc(var(--basic-font-size) * 2);
-@logo-height-mobile: calc(var(--basic-font-size) * 3);
+@logo-height-desktop: calc(var(--font-size) * 2);
+@logo-height-mobile: calc(var(--font-size) * 3);
 
 .navBar {
   opacity: 0;
   width: 100%;
   box-sizing: border-box;
   z-index: 1000;
-  padding: calc(var(--basic-size) / 5) calc(var(--basic-size) * 2);
+  padding: calc(var(--size) / 5) calc(var(--size) * 2);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,14 +18,14 @@
   /* 媒体查询 768px */
   @media (max-width: 768px) {
     flex-direction: column;
-    padding: calc(var(--basic-size) / 2) var(--basic-size);
+    padding: calc(var(--size) / 2) var(--size);
   }
 
   .logo {
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: calc(var(--basic-font-size) / 2);
+    gap: calc(var(--font-size) / 2);
 
     img {
       height: @logo-height-desktop;

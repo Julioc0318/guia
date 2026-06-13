@@ -1,0 +1,33 @@
+@FONT_SIZE_TITLE: calc(3 * var(--font-size)); // 标题字号
+@FONT_COLOR: var(--default-font-color); // 文本默认颜色
+@THEME: var(--theme-color); // 主题色
+@FONT_SIZE_TEXT: var(--font-size);
+@SIZE: var(--size);
+@SUBTITLE_MARGIN: calc(0.5 * @SIZE);
+@BUTTON_GAP: calc(0.2 * @SIZE);
+@PAGE_PADDING: calc(2 * @SIZE) calc(2 * @SIZE) @SIZE;
+
+.introduce {
+  display: flex;
+  flex-direction: column;
+  padding: @PAGE_PADDING;
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    font-size: @FONT_SIZE_TITLE;
+    i {
+      color: @THEME;
+    }
+  }
+
+  .subTitle {
+    margin: @SUBTITLE_MARGIN;
+  }
+
+  .buttonArea {
+    display: flex;
+    justify-content: center;
+    gap: @BUTTON_GAP;
+  }
+}

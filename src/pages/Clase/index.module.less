@@ -1,15 +1,15 @@
 .theaterWrapper {
   box-sizing: border-box;
-  padding: calc(0.5 * var(--basic-size)) calc(var(--basic-size) * 2);
+  padding: calc(0.5 * var(--size)) calc(var(--size) * 2);
   display: flex;
   flex-direction: column;
-  gap: calc(var(--basic-font-size) * 1);
+  gap: calc(var(--font-size) * 1);
   width: 100%;
 }
 
 .mainConsole {
   display: flex;
-  gap: calc(var(--basic-font-size) * 1.25);
+  gap: calc(var(--font-size) * 1.25);
   width: 100%;
   align-items: flex-start;
 
@@ -21,15 +21,15 @@
 
 /* 🚪 左侧导航总外壳 */
 .sidebarMenu {
-  flex: 0 0 calc(var(--basic-font-size) * 12);
+  flex: 0 0 calc(var(--font-size) * 12);
   background: #ffffff;
-  border-radius: calc(var(--basic-font-size) * 0.75);
+  border-radius: calc(var(--font-size) * 0.75);
   border: 1px solid var(--default-font-color);
   box-sizing: border-box;
 
   @media (max-width: 768px) {
     flex: none;
-    border-radius: calc(var(--basic-font-size) * 0.5);
+    border-radius: calc(var(--font-size) * 0.5);
   }
 }
 
@@ -37,8 +37,8 @@
 .pcMenuList {
   display: flex;
   flex-direction: column;
-  gap: calc(var(--basic-font-size) * 0.4);
-  padding: calc(var(--basic-font-size) * 0.6);
+  gap: calc(var(--font-size) * 0.4);
+  padding: calc(var(--font-size) * 0.6);
 
   @media (max-width: 768px) {
     display: none; // 🚀 手机端直接隐藏
@@ -47,14 +47,14 @@
   .menuBtn {
     display: flex;
     align-items: center;
-    gap: calc(var(--basic-font-size) * 0.5);
+    gap: calc(var(--font-size) * 0.5);
     width: 100%;
     background: transparent;
     border: none;
-    padding: calc(var(--basic-font-size) * 0.6) calc(var(--basic-font-size) * 0.8);
-    border-radius: calc(var(--basic-font-size) * 0.4);
+    padding: calc(var(--font-size) * 0.6) calc(var(--font-size) * 0.8);
+    border-radius: calc(var(--font-size) * 0.4);
     text-align: left;
-    font-size: calc(var(--basic-font-size) * 0.85);
+    font-size: calc(var(--font-size) * 0.85);
     font-weight: 700;
     color: var(--dark-grey);
     cursor: pointer;
@@ -69,17 +69,17 @@
 
     &:hover {
       background: var(--default-font-color);
-      color: var(--main-theme-color);
+      color: var(--theme-color);
     }
   }
 
   .btnActive {
     background: rgba(59, 130, 246, 0.08) !important;
-    color: var(--main-theme-color) !important;
+    color: var(--theme-color) !important;
 
     .roomDot {
-      background: var(--main-theme-color);
-      box-shadow: 0 0 8px var(--main-theme-color);
+      background: var(--theme-color);
+      box-shadow: 0 0 8px var(--theme-color);
     }
   }
 }
@@ -89,7 +89,7 @@
   display: none; // 🚀 默认隐藏，只有手机端才现身
   align-items: center;
   justify-content: space-between;
-  padding: calc(var(--basic-font-size) * 0.5);
+  padding: calc(var(--font-size) * 0.5);
   width: 100%;
   box-sizing: border-box;
 
@@ -98,7 +98,7 @@
   }
 
   .pagerTitle {
-    font-size: calc(var(--basic-font-size) * 0.85);
+    font-size: calc(var(--font-size) * 0.85);
     font-weight: 800;
     color: var(--dark-blue);
   }
@@ -107,8 +107,8 @@
     border: none;
     background: var(--default-font-color);
     color: var(--dark-blue);
-    width: calc(var(--basic-font-size) * 2);
-    height: calc(var(--basic-font-size) * 2);
+    width: calc(var(--font-size) * 2);
+    height: calc(var(--font-size) * 2);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -127,9 +127,9 @@
 .stageViewport {
   flex: 1;
   background: #ffffff;
-  border-radius: calc(var(--basic-font-size) * 0.75);
+  border-radius: calc(var(--font-size) * 0.75);
   border: 1px solid var(--default-font-color);
-  padding: calc(var(--basic-font-size) * 1.25);
+  padding: calc(var(--font-size) * 1.25);
   box-sizing: border-box;
 }
 
@@ -141,20 +141,20 @@
 .stageHeader {
   display: flex;
   align-items: center;
-  gap: calc(var(--basic-font-size) * 0.6);
-  margin-bottom: calc(var(--basic-font-size) * 1);
+  gap: calc(var(--font-size) * 0.6);
+  margin-bottom: calc(var(--font-size) * 1);
   border-bottom: 1px solid var(--default-font-color);
-  padding-bottom: calc(var(--basic-font-size) * 0.5);
+  padding-bottom: calc(var(--font-size) * 0.5);
 
   h4 {
-    font-size: calc(var(--basic-font-size) * 1.2);
+    font-size: calc(var(--font-size) * 1.2);
     font-weight: 800;
     color: var(--dark-blue);
     margin: 0;
   }
 
   .liveBadge {
-    font-size: calc(var(--basic-font-size) * 0.6);
+    font-size: calc(var(--font-size) * 0.6);
     background: #ef4444;
     color: white;
     padding: 1px 5px;
@@ -166,27 +166,27 @@
 .sessionsGrid {
   display: flex;
   flex-direction: column;
-  gap: calc(0.4 * var(--basic-size));
+  gap: calc(0.4 * var(--size));
 }
 
 .sessionCard {
-  border-radius: calc(var(--basic-font-size) * 0.6);
-  padding: calc(var(--basic-font-size) * 0.8);
+  border-radius: calc(var(--font-size) * 0.6);
+  padding: calc(var(--font-size) * 0.8);
   box-sizing: border-box;
   background: #ffffff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
   border: 1px solid var(--default-font-color);
-  border-left: 4px solid var(--main-theme-color);
+  border-left: 4px solid var(--theme-color);
 }
 
 .sessionTop {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: calc(var(--basic-font-size) * 0.6);
+  margin-bottom: calc(var(--font-size) * 0.6);
 
   .timeTag {
-    font-size: calc(var(--basic-font-size) * 0.75);
+    font-size: calc(var(--font-size) * 0.75);
     font-weight: 700;
     color: var(--dark-blue);
     display: flex;
@@ -195,7 +195,7 @@
   }
 
   .teacherName {
-    font-size: calc(var(--basic-font-size) * 0.8);
+    font-size: calc(var(--font-size) * 0.8);
     font-weight: 700;
     color: var(--dark-blue);
   }
@@ -204,18 +204,18 @@
 .studentFlow {
   display: flex;
   flex-wrap: wrap;
-  gap: calc(var(--basic-font-size) * 0.3);
-  margin-bottom: calc(var(--basic-font-size) * 0.4);
+  gap: calc(var(--font-size) * 0.3);
+  margin-bottom: calc(var(--font-size) * 0.4);
 }
 
 .studentBubble {
   display: flex;
   align-items: center;
   gap: 4px;
-  padding: calc(var(--basic-font-size) * 0.15) calc(var(--basic-font-size) * 0.4);
-  border-radius: calc(var(--basic-font-size) * 1);
+  padding: calc(var(--font-size) * 0.15) calc(var(--font-size) * 0.4);
+  border-radius: calc(var(--font-size) * 1);
   background: var(--default-font-color);
-  font-size: calc(var(--basic-font-size) * 0.7);
+  font-size: calc(var(--font-size) * 0.7);
   color: var(--dark-grey);
 }
 
@@ -223,16 +223,16 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  font-size: calc(var(--basic-font-size) * 0.65);
+  font-size: calc(var(--font-size) * 0.65);
   color: var(--mid-grey);
 }
 
 .emptyStage {
   color: var(--mid-grey);
   font-style: italic;
-  font-size: calc(var(--basic-font-size) * 0.85);
+  font-size: calc(var(--font-size) * 0.85);
   text-align: center;
-  padding: calc(var(--basic-font-size) * 4) 0;
+  padding: calc(var(--font-size) * 4) 0;
 }
 
 @keyframes fadeIn {

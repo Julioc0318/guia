@@ -1,51 +1,51 @@
 /* 👑 邀请码核心视觉转化高亮卡片 */
 /* 👑 邀请码核心视觉转化高亮卡片 */
 .codePromoBox {
-    margin-top: calc(var(--basic-font-size) * 0.6);
-    padding: calc(var(--basic-font-size) * 0.8);
+    margin-top: calc(var(--font-size) * 0.6);
+    padding: calc(var(--font-size) * 0.8);
     background-color: rgba(249, 115, 22, 0.05);
-    border-radius: calc(var(--basic-font-size) * 0.5);
+    border-radius: calc(var(--font-size) * 0.5);
     border: 1px dashed var(--mid-orange);
   
     .codeLabel {
-      font-size: calc(var(--basic-font-size) * 0.75);
+      font-size: calc(var(--font-size) * 0.75);
       font-weight: 700;
       color: var(--mid-orange);
-      margin-bottom: calc(var(--basic-font-size) * 0.2);
+      margin-bottom: calc(var(--font-size) * 0.2);
     }
   
     .codeValue {
-      font-size: calc(1.2 * var(--basic-font-size));
+      font-size: calc(1.2 * var(--font-size));
       font-weight: 900;
       font-family: monospace;
-      color: var(--main-theme-color);
+      color: var(--theme-color);
       background: var(--default-font-color);
-      padding: calc(var(--basic-font-size) * 0.2) calc(var(--basic-font-size) * 0.5);
+      padding: calc(var(--font-size) * 0.2) calc(var(--font-size) * 0.5);
       display: inline-block;
-      border-radius: calc(var(--basic-font-size) * 0.2);
+      border-radius: calc(var(--font-size) * 0.2);
       letter-spacing: 1px;
     }
   
     // 🚀 新增：提示文本样式补遗（确保上下间距对齐）
     .codeImportance {
-      font-size: calc(var(--basic-font-size) * 0.75);
+      font-size: calc(var(--font-size) * 0.75);
       color: var(--dark-grey);
-      margin: calc(var(--basic-font-size) * 0.4) 0;
+      margin: calc(var(--font-size) * 0.4) 0;
       line-height: 1.4;
     }
   
     // 🚀 新增：官方链接外层包装器
     .officialLinkWrapper {
-      margin-top: calc(var(--basic-font-size) * 0.5);
+      margin-top: calc(var(--font-size) * 0.5);
       display: block; // 确保独占一行，防止行内元素排列错乱
       width: 100%;
     }
   
     // 🚀 新增：官方链接文本行内样式
     .officialLink {
-      font-size: calc(var(--basic-font-size) * 0.75);
+      font-size: calc(var(--font-size) * 0.75);
       font-weight: 700;
-      color: var(--main-theme-color); // 使用系统主色调
+      color: var(--theme-color); // 使用系统主色调
       text-decoration: none; // 默认移除下划线，保持视觉干净
       display: inline-flex; // 方便未来如果有需要可以在内部添加小图标对齐
       align-items: center;

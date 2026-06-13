@@ -10,15 +10,15 @@
       .titleArea {
         display: flex;
         align-items: center;
-        gap: calc(0.4 * var(--basic-font-size)); // 标题与箭头的流式间距
+        gap: calc(0.4 * var(--font-size)); // 标题与箭头的流式间距
       }
     }
   
     /* 🏹 基础箭头样式 */
     .arrowIcon {
       display: inline-block;
-      font-size: calc(0.6 * var(--basic-font-size)); // 比标题字号略小，视觉层级更精致
-      color: var(--main-theme-color); // 保持与背景色调统一或改用 mid-grey
+      font-size: calc(0.6 * var(--font-size)); // 比标题字号略小，视觉层级更精致
+      color: var(--theme-color); // 保持与背景色调统一或改用 mid-grey
       transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1); // 缓动动画
       transform: rotate(0deg); /* 默认收起状态：箭头朝右 ▶ */
     }
@@ -29,7 +29,7 @@
     }
   
     .collapseContent {
-      padding-left: calc(0.2 * var(--basic-size));
+      padding-left: calc(0.2 * var(--size));
       animation: slideDown 0.2s ease-out;
     }
   }
