@@ -1,0 +1,57 @@
+/* 2. 基础按钮公用样式 (Base) */
+.btn-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 12px; // 契合你之前的现代圆角卡片风
+  border: 1px solid transparent;
+  cursor: pointer;
+  user-select: none;
+  
+  /* 丝滑的自适应过渡动画：针对大屏鼠标移入移出 */
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* 统一的点击下沉物理反馈 */
+  &:active {
+    transform: scale(0.96); 
+  }
+  
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+/* 3. 绿色高亮按钮 (Primary) */
+.btnPrimary {
+  .btn-base;
+  background-color: var(--main-theme-color);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(63, 207, 142, 0.2); // 淡淡的主题色呼吸阴影
+
+  /* 悬停：颜色略微加深，阴影扩大 */
+  &:hover:not(:disabled) {
+    background-color: var(--button-border-color);
+    box-shadow: 0 4px 14px rgba(22, 182, 116, 0.35);
+  }
+}
+
+/* 4. 白色/浅灰按钮 (Secondary) */
+.btnSecondary {
+  .btn-base;
+  background-color: var(--default-background-color);
+  border-color: var(--default-border-color);
+  color: var(--default-font-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+
+  /* 悬停：边框变深，文字微变，变成纯白背景浮起 */
+  &:hover:not(:disabled) {
+    background-color: #ffffff;
+    border-color: var(--font-color-lighter);
+    color: var(--default-font-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+}

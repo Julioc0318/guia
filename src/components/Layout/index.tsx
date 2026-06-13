@@ -3,10 +3,12 @@ import { Outlet } from "react-router-dom";
 import { NavBar } from "@/components/NavBar/navBar";
 import { Footer } from "@/components/Footer/footer";
 import styles from './layout.module.less'
+import { ScrollToTop } from "../ScrollTop";
 
 export const RootLayout: React.FC = () => {
   return (
     <div className={styles.layout}>
+      <ScrollToTop />
       <NavBar />
       <main className={styles.contentLayout}>
         <Outlet />

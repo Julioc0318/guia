@@ -8,21 +8,23 @@
 @font-face {
   font-family: "CustomFont";
   /* 确保这里末尾直接是分号 ; 结束 */
-  src: url("./assets/fonts/CustomFont-Bold.woff2") format("woff2");
-  font-weight: 700; /* 注意：如果是 Bold 粗体文件，建议这里写 700 */
-  font-style: normal;
-  font-display: swap;
+  src: url("./assets/fonts/CustomFont-Regular.woff2") format("woff2");
 }
 
 :root {
   /* 1. 颜色样式变量 */
-  --default-boder-color: #dfdfdf; /* 默认边框灰色 */
+  --default-border-color: #dfdfdf; /* 默认边框灰色 */
   --default-background-color: #fcfcfc; /* 默认背景灰色 */
   --main-theme-color: #3fcf8e; /* 绿色主题色 */
   /* 文本颜色 */
   --default-font-color: #171717; /* 默认文本黑色 */
   --font-color-lighter: #707070; /* 浅文本灰色 */
+  --font-color-selected-dark: #249361;
+  --font-color-hover-light: #52dc9d;
+  --font-disabled-color: #a3a3a3;
   /* 按钮颜色 */
+  --button-hover-background-color: #e8e8e8; /* 鼠标移入加深背景灰色 */
+  --button-hover-border-color: #cccccc;
   --button-text-color: #3fcf8e;
   --button-background-color: #72e3ad;
   --button-border-color: #16b674;
@@ -88,4 +90,8 @@ body {
   height: 100%;
   margin: 0;
   overscroll-behavior: none;
+  font-family: var(--default-font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }

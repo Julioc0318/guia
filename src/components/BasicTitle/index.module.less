@@ -55,7 +55,7 @@
       margin-top: calc(2 * var(--basic-font-size));
       font-weight: 500; // 比 lighter 更有精准控制力的细体
       font-size: calc(var(--basic-font-size) * 1.15);
-      color: var(--light-grey); // 核心：副标题颜色微微调淡，瞬间拉开主次层级
+      color: var(--default-font-color); // 核心：副标题颜色微微调淡，瞬间拉开主次层级
       line-height: 1.6; // 正文行高要放开，极大地提高阅读舒适度
       letter-spacing: 0.05em;
       // 【高级修复】：去掉死板的 nowrap，改用现代网页的多行文本截断
@@ -90,7 +90,7 @@
     display: flex;
     gap: calc(var(--basic-font-size) * 0.5);
     justify-content: center;
-    color: var(--light-grey);
+    color: var(--default-font-color);
     @media (max-width: 768px) {
       font-size: calc(var(--basic-font-size) * 0.7);
     }

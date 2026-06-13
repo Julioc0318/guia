@@ -1,14 +1,21 @@
+@logo-height-desktop: calc(var(--basic-font-size) * 2);
+@logo-height-mobile: calc(var(--basic-font-size) * 3);
+
 .navBar {
+  opacity: 0;
   width: 100%;
   box-sizing: border-box;
   z-index: 1000;
-  background-color: var(--dark-blue);
-  padding: calc(var(--basic-size) / 5) var(--basic-size);
+  padding: calc(var(--basic-size) / 5) calc(var(--basic-size) * 2);
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  /* 横屏手机 / 小平板 [481px - 768px] */
+  border-bottom: 1px solid var(--border-color);
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: background-color 0.3s, backdrop-filter 0.3s;
+  /* 媒体查询 768px */
   @media (max-width: 768px) {
     flex-direction: column;
     padding: calc(var(--basic-size) / 2) var(--basic-size);
@@ -21,73 +28,12 @@
     gap: calc(var(--basic-font-size) / 2);
 
     img {
-      height: calc(var(--basic-font-size) * 3);
+      height: @logo-height-desktop;
       width: auto;
-    }
 
-    @media (max-width: 768px) {
-      img {
-        height: calc(var(--basic-font-size) * 5);
-      }
-    }
-
-    label {
-      font-size: calc(var(--basic-font-size) * 2);
-      font-weight: bold;
-      color: var(--light-grey);
-    }
-  }
-
-  .navButtons {
-    display: flex;
-    gap: calc(var(--basic-font-size) / 2);
-
-    .navButton {
-      background: transparent;
-      border: none;
-      font-size: var(--basic-font-size);
-      cursor: pointer;
-      border-radius: 32px;
-      padding: calc(var(--basic-font-size) / 2) calc(var(--basic-font-size) * 1.5);
-      color: var(--light-grey);
-      font-family: var(--font-family-nav);
-      font-weight: lighter;
-
-      // 【关键 1】：开启所有可渐变属性的过渡动画（背景、颜色、阴影、阴影盒）
-      // 持续时间 0.25s 或 0.3s，使用 ease 减速曲线，让移入移出都丝滑无比
-      transition: all 0.5s ease;
-
+      /* 媒体查询 768px */
       @media (max-width: 768px) {
-        font-size: calc(1.5 * var(--basic-font-size));
-        padding: calc(var(--basic-font-size) / 2) calc(var(--basic-font-size));
-      }
-
-      &:hover {
-        color: var(--main-theme-color);
-        background: white;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        text-shadow:
-          0.3px 0 0 currentColor,
-          -0.3px 0 0 currentColor;
-      }
-    }
-
-    .active {
-      color: var(--light-orange);
-      // background: white;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-      // 【关键 2】：利用 text-shadow 模拟加粗效果，完全不改变宽度
-      // 往左和往右分别虚化 0.3 像素，制造横向饱满的“加粗”视觉感
-      text-shadow:
-        0.3px 0 0 currentColor,
-        -0.3px 0 0 currentColor;
-
-      &:hover {
-        color: var(--light-orange);
-        cursor: default;
-        background: none;
-
+        height: @logo-height-mobile;
       }
     }
   }
@@ -98,200 +44,5 @@
   top: 0;
   left: 0;
   z-index: 1000;
-}
-
-.navBar {
-  width: 100%;
-  box-sizing: border-box;
-  z-index: 1000;
-  background-color: var(--dark-blue);
-  padding: calc(var(--basic-size) / 5) var(--basic-size);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  /* 横屏手机 / 小平板 [481px - 768px] */
-  @media (max-width: 768px) {
-    flex-direction: column;
-    padding: calc(var(--basic-size) / 2) var(--basic-size);
-    gap: calc(var(--basic-font-size) * 1);
-  }
-
-  .logo {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: calc(var(--basic-font-size) / 2);
-
-    img {
-      height: calc(var(--basic-font-size) * 3);
-      width: auto;
-    }
-
-    @media (max-width: 768px) {
-      img {
-        height: calc(var(--basic-font-size) * 5);
-      }
-    }
-
-    label {
-      font-size: calc(var(--basic-font-size) * 2);
-      font-weight: bold;
-      color: var(--light-grey);
-    }
-  }
-
-  .navButtons {
-    display: flex;
-    align-items: center; // 🚀 确保多语言按钮与普通导航文字垂直居中对齐
-    gap: calc(var(--basic-font-size) / 2);
-
-    .navButton {
-      background: transparent;
-      border: none;
-      font-size: var(--basic-font-size);
-      cursor: pointer;
-      border-radius: 32px;
-      padding: calc(var(--basic-font-size) / 2) calc(var(--basic-font-size) * 1.5);
-      color: var(--light-grey);
-      font-family: var(--font-family-nav);
-      font-weight: lighter;
-      transition: all 0.5s ease;
-
-      @media (max-width: 768px) {
-        font-size: calc(1.5 * var(--basic-font-size));
-        padding: calc(var(--basic-font-size) / 2) var(--basic-font-size);
-      }
-
-      &:hover {
-        color: var(--main-theme-color);
-        background: white;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        text-shadow:
-          0.3px 0 0 currentColor,
-          -0.3px 0 0 currentColor;
-      }
-    }
-
-    .active {
-      color: var(--light-orange);
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      text-shadow:
-        0.3px 0 0 currentColor,
-        -0.3px 0 0 currentColor;
-
-      &:hover {
-        color: var(--light-orange);
-        cursor: default;
-        background: none;
-      }
-    }
-
-    /* 🌐 多语言下拉菜单包裹器 */
-    .langDropdown {
-      position: relative;
-      display: inline-block;
-      height: 100%;
-
-      &:hover {
-        .langMenu {
-          display: block;
-        }
-
-        .langTrigger {
-          color: var(--main-theme-color);
-          background: white;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-          text-shadow: 0.3px 0 0 currentColor, -0.3px 0 0 currentColor;
-        }
-      }
-
-      /* 触发按钮样式 */
-      .langTrigger {
-        font-size: var(--basic-font-size);
-        cursor: pointer;
-        border-radius: 32px;
-        padding: calc(var(--basic-font-size) / 2) calc(var(--basic-font-size) * 1.2);
-        color: var(--light-grey);
-        font-family: var(--font-family-nav);
-        font-weight: lighter;
-        transition: all 0.5s ease;
-        white-space: nowrap;
-
-        @media (max-width: 768px) {
-          font-size: calc(1.5 * var(--basic-font-size));
-          padding: calc(var(--basic-font-size) / 2) var(--basic-font-size);
-        }
-      }
-
-      /* 悬浮弹出的二级菜单面板 */
-      .langMenu {
-        display: none;
-        position: absolute;
-        right: 0;
-        top: 100%;
-
-        /* 💡 核心修复：移除 margin-top，改用 padding-top 填充间隙，建立鼠标安全通道 */
-        padding-top: calc(var(--basic-font-size) * 0.3);
-
-        z-index: 1100;
-
-        @media (max-width: 768px) {
-          right: 50%;
-          transform: translateX(50%);
-        }
-
-        /* 💡 新增内部包裹层：承载原本的背景、圆角与阴影，隔离 padding 的视觉影响 */
-        .langMenuInner {
-          background-color: var(--dark-blue);
-          min-width: calc(var(--basic-font-size) * 6);
-          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-          border-radius: calc(var(--basic-font-size) * 0.5);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          overflow: hidden;
-          padding: calc(var(--basic-font-size) * 0.2) 0;
-
-          @media (max-width: 768px) {
-            min-width: calc(var(--basic-font-size) * 8);
-          }
-        }
-      }
-
-      /* 菜单内部的语种选项（放进 Inner 作用域内） */
-      .langItem {
-        font-size: calc(var(--basic-font-size) * 0.85);
-        color: var(--light-grey);
-        padding: calc(var(--basic-font-size) * 0.5) calc(var(--basic-font-size) * 1);
-        cursor: pointer;
-        font-weight: lighter;
-        transition: all 0.3s ease;
-        text-align: center;
-        white-space: nowrap;
-
-        @media (max-width: 768px) {
-          font-size: calc(1.2 * var(--basic-font-size));
-          padding: calc(var(--basic-font-size) * 0.6) calc(var(--basic-font-size) * 1.5);
-        }
-
-        &:hover {
-          background-color: white;
-          color: var(--main-theme-color);
-          text-shadow: 0.3px 0 0 currentColor, -0.3px 0 0 currentColor;
-        }
-
-        &.langItemActive {
-          color: var(--light-orange);
-          text-shadow: 0.3px 0 0 currentColor, -0.3px 0 0 currentColor;
-          background-color: rgba(255, 255, 255, 0.03);
-        }
-      }
-    }
-  }
-}
-
-.navBarFixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
+  opacity: 1;
 }

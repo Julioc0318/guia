@@ -1,0 +1,41 @@
+@FONT_SELECTED_COLOR: var(--font-color-selected-dark);
+@FONT_HOVER_COLOR: var(--font-color-hover-light);
+@DISABLED_COLOR: var(--font-disabled-color);
+
+.navButtons {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--basic-font-size));
+
+  /* 按钮样式 */
+  .navButton {
+    font-size: var(--basic-font-size);
+    border-radius: 8px;
+    padding: calc(var(--basic-font-size) / 5) calc(var(--basic-font-size) / 2);
+    color: var(--default-font-color);
+    font-family: var(--font-family-nav);
+    transition: all 0.5s ease;
+    -webkit-tap-highlight-color: transparent;
+
+    /* 滑入效果 */
+    &:hover {
+      color: @FONT_HOVER_COLOR;
+      cursor: pointer;
+    }
+
+    /* 手机界面 */
+    @media (max-width: 768px) {
+      font-size: calc(1.5 * var(--basic-font-size));
+      padding: calc(var(--basic-font-size) / 2) var(--basic-font-size);
+    }
+  }
+
+  /* 按钮激活样式 */
+  .active {
+    color: @FONT_SELECTED_COLOR;
+
+    &:hover {
+      color: @DISABLED_COLOR;
+    }
+  }
+}

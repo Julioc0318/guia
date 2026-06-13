@@ -1,9 +1,25 @@
-<svg width="540" height="120" viewBox="0 0 540 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="640" height="120" viewBox="0 0 640 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="paint0_linear" x1="0%" y1="0%" x2="100%" y2="100%" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#249361"/> <stop offset="1" stop-color="#3ECF8E"/> </linearGradient>
+    
+    <linearGradient id="paint1_linear" x1="0%" y1="0%" x2="0%" y2="100%" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#000000" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
   <g transform="translate(10, 85)">
-    <text x="0" y="0" fill="#FFFFFF" font-family="Arial Black, Impact, sans-serif" font-size="72" font-weight="900" letter-spacing="-3">GO</text>
+    <text x="0" y="0" fill="url(#paint0_linear)" font-family="Arial Black, Impact, sans-serif" font-size="72" font-weight="900" letter-spacing="-3">
+      CHARRO
+      <tspan x="0" y="0" fill="url(#paint1_linear)" fill-opacity="0.15">CHARRO</tspan>
+    </text>
     
-    <text x="162" y="0" fill="#FFFFFF" font-family="Arial Black, Impact, sans-serif" font-size="72" font-weight="900" letter-spacing="-3.5">DELIBES</text>
+    <circle cx="342" cy="-22" r="10" fill="url(#paint0_linear)" />
     
-    <rect x="122" y="-22" width="26" height="22" fill="#447DF7"/>
+    <text x="382" y="0" fill="url(#paint0_linear)" font-family="Arial Black, Impact, sans-serif" font-size="72" font-weight="900" letter-spacing="-3.5">
+      GRINGO
+      <tspan x="382" y="0" fill="url(#paint1_linear)" fill-opacity="0.15">GRINGO</tspan>
+    </text>
   </g>
 </svg>

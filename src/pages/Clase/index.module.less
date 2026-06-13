@@ -1,6 +1,6 @@
 .theaterWrapper {
   box-sizing: border-box;
-  padding: calc(0.5 * var(--basic-size)) var(--basic-size);
+  padding: calc(0.5 * var(--basic-size)) calc(var(--basic-size) * 2);
   display: flex;
   flex-direction: column;
   gap: calc(var(--basic-font-size) * 1);
@@ -24,7 +24,7 @@
   flex: 0 0 calc(var(--basic-font-size) * 12);
   background: #ffffff;
   border-radius: calc(var(--basic-font-size) * 0.75);
-  border: 1px solid var(--light-grey);
+  border: 1px solid var(--default-font-color);
   box-sizing: border-box;
 
   @media (max-width: 768px) {
@@ -68,7 +68,7 @@
     }
 
     &:hover {
-      background: var(--light-grey);
+      background: var(--default-font-color);
       color: var(--main-theme-color);
     }
   }
@@ -105,7 +105,7 @@
 
   .pagerArrow {
     border: none;
-    background: var(--light-grey);
+    background: var(--default-font-color);
     color: var(--dark-blue);
     width: calc(var(--basic-font-size) * 2);
     height: calc(var(--basic-font-size) * 2);
@@ -128,7 +128,7 @@
   flex: 1;
   background: #ffffff;
   border-radius: calc(var(--basic-font-size) * 0.75);
-  border: 1px solid var(--light-grey);
+  border: 1px solid var(--default-font-color);
   padding: calc(var(--basic-font-size) * 1.25);
   box-sizing: border-box;
 }
@@ -143,7 +143,7 @@
   align-items: center;
   gap: calc(var(--basic-font-size) * 0.6);
   margin-bottom: calc(var(--basic-font-size) * 1);
-  border-bottom: 1px solid var(--light-grey);
+  border-bottom: 1px solid var(--default-font-color);
   padding-bottom: calc(var(--basic-font-size) * 0.5);
 
   h4 {
@@ -175,7 +175,7 @@
   box-sizing: border-box;
   background: #ffffff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
-  border: 1px solid var(--light-grey);
+  border: 1px solid var(--default-font-color);
   border-left: 4px solid var(--main-theme-color);
 }
 
@@ -214,7 +214,7 @@
   gap: 4px;
   padding: calc(var(--basic-font-size) * 0.15) calc(var(--basic-font-size) * 0.4);
   border-radius: calc(var(--basic-font-size) * 1);
-  background: var(--light-grey);
+  background: var(--default-font-color);
   font-size: calc(var(--basic-font-size) * 0.7);
   color: var(--dark-grey);
 }

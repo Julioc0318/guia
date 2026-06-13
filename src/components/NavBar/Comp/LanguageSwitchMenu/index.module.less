@@ -1,0 +1,115 @@
+@FONT_SIZE: var(--basic-font-size);
+
+/* 多语言下拉菜单包裹器 */
+.langDropdown {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+
+  &:hover {
+    .langMenu {
+      display: block;
+    }
+  }
+
+  /* 触发按钮样式 */
+  .langTrigger {
+    cursor: pointer;
+    border-radius: 32px;
+    padding: calc(var(--basic-font-size) / 2) calc(var(--basic-font-size) * 1.2);
+    color: var(--default-font-color);
+    font-family: var(--font-family-nav);
+    transition: all 0.5s ease;
+    white-space: nowrap;
+    display: flex;
+  
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+
+    @media (max-width: 768px) {
+      font-size: calc(1.5 * @FONT_SIZE);
+      padding: calc(var(--basic-font-size) / 2) var(--basic-font-size);
+    }
+
+    .menuFlagIcon {
+      width:  @FONT_SIZE;
+      height:  @FONT_SIZE;
+    }
+  }
+
+  /* 悬浮弹出的二级菜单面板 */
+  .langMenu {
+    background-color: white;
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    padding-top: calc(var(--basic-font-size) * 0.3);
+
+    z-index: 1100;
+
+    @media (max-width: 768px) {
+      right: 50%;
+      transform: translateX(50%);
+    }
+
+    /* 💡 新增内部包裹层：承载原本的背景、圆角与阴影，隔离 padding 的视觉影响 */
+    .langMenuInner {
+      background-color: var(--dark-blue);
+      min-width: calc(var(--basic-font-size) * 6);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      border-radius: calc(var(--basic-font-size) * 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      overflow: hidden;
+      padding: calc(var(--basic-font-size) * 0.2) 0;
+
+      @media (max-width: 768px) {
+        min-width: calc(var(--basic-font-size) * 8);
+      }
+
+    }
+  }
+
+  /* 菜单内部的语种选项（放进 Inner 作用域内） */
+  .langItem {
+    font-size: calc(var(--basic-font-size) * 0.85);
+    color: var(--default-font-color);
+    padding: calc(var(--basic-font-size) * 0.5) calc(var(--basic-font-size) * 1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    white-space: nowrap;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+
+    @media (max-width: 768px) {
+      font-size: calc(1.2 * var(--basic-font-size));
+      padding: calc(var(--basic-font-size) * 0.6)
+        calc(var(--basic-font-size) * 1.5);
+    }
+
+    &:hover {
+      background-color: white;
+      color: var(--main-theme-color);
+      text-shadow:
+        0.3px 0 0 currentColor,
+        -0.3px 0 0 currentColor;
+    }
+
+    &.langItemActive {
+      color: var(--main-theme-color);
+      text-shadow:
+        0.3px 0 0 currentColor,
+        -0.3px 0 0 currentColor;
+      background-color: rgba(255, 255, 255, 0.03);
+    }
+
+    .menuFlagIcon {
+      width:  @FONT_SIZE;
+      height:  @FONT_SIZE;
+    }
+  }
+}

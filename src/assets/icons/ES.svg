@@ -1,0 +1,15 @@
+<svg class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+  <defs>
+    <clipPath id="esCircleClip">
+      <circle cx="512" cy="512" r="512" />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#esCircleClip)">
+    <rect x="0" y="0" width="1024" height="256" fill="#AA151B" />
+    
+    <rect x="0" y="256" width="1024" height="512" fill="#F1BF00" />
+    
+    <rect x="0" y="768" width="1024" height="256" fill="#AA151B" />
+  </g>
+</svg>
