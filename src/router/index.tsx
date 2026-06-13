@@ -1,5 +1,5 @@
 /* src/router/index.tsx */
-import { createBrowserRouter, Navigate } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import { Home } from "@/pages/Home/Home";
 import { Contact } from "@/pages/Contact/Contact";
 import { RootLayout } from "@/components/Layout";

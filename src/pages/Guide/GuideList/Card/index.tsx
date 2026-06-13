@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import styles from "./index.module.less";
+import type { MouseEventHandler } from "react";
 
 export const Card = ({
   imgSrc,
@@ -12,12 +13,12 @@ export const Card = ({
   title: string;
   text: string;
   disabled?: boolean;
-  onClick?: () => void;
+  onClick?: MouseEventHandler<HTMLDivElement>;
 }) => {
   return (
     <div
       className={classNames([styles.card, disabled ? styles.disabled : null])}
-      onClick={disabled ? null : onClick}
+      onClick={!disabled && onClick}
     >
       <div className={styles.pic}>
         <img src={imgSrc} />
