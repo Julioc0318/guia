@@ -1,0 +1,88 @@
+@BORDER_COLOR: var(--default-border-color);
+@FONT_COLOR: var(--font-color-lighter);
+@FONT_SIZE: var(--font-size);
+@SIZE: var(--size);
+@PADDING: calc(0.5 * @SIZE);
+@TEXT_PADDING: calc(0.5 * @SIZE) calc(0.5 * @SIZE);
+@FONT_COLOR_HOVER: var(--default-font-color); // 滑入文本色
+@BORDER_COLOR_HOVER: var(--font-color-lighter); // 滑入边框色
+@FONT_COLOR_DISABLED: var(--font-disabled-color); // 文本禁止色
+@BACKGROUND_COLOR_DISABLED: var(--button-hover-background-color); // 背景禁止色
+
+.card {
+  border: 1px solid @BORDER_COLOR;
+  border-radius: @FONT_SIZE;
+  width: 100%;
+  .pic {
+    border-bottom: 1px solid @BORDER_COLOR;
+    img {
+      border-top-right-radius: 12px;
+      border-top-left-radius: 12px;
+      width: 100%;
+      aspect-ratio: 5 / 2;
+      object-fit: cover;
+      object-position: center center;
+      position: relative;
+      display: block;
+      filter: grayscale(30%) brightness(0.7);
+      transition: filter 0.3s ease;
+      @media (max-width: 768px) {
+        aspect-ratio: 5 / 3;
+      }
+    }
+  }
+  .intro {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: @TEXT_PADDING;
+    .title {
+      text-align: left;
+      margin-bottom: calc(0.2 * @SIZE);
+    }
+    .text {
+      font-size: calc(0.7 * @FONT_SIZE);
+      color: @FONT_COLOR;
+      text-align: left;
+    }
+  }
+
+  a {
+    display: block;
+    text-align: left;
+    padding: 0 @TEXT_PADDING;
+    font-size: calc(0.7 * @FONT_SIZE);
+    color: @FONT_COLOR;
+  }
+}
+
+.card:hover {
+  cursor: pointer;
+  border-color: @BORDER_COLOR_HOVER;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  a {
+    color: @FONT_COLOR_HOVER;
+  }
+}
+
+.disabled {
+  background-color: @BACKGROUND_COLOR_DISABLED;
+  .intro {
+    .title,
+    .text {
+      color: @FONT_COLOR_DISABLED;
+    }
+  }
+  a {
+    color: @FONT_COLOR_DISABLED;
+  }
+}
+
+.disabled:hover {
+  cursor: not-allowed;
+  border-color: @BORDER_COLOR;
+  box-shadow: none;
+  a {
+    color: @FONT_COLOR_DISABLED;
+  }
+}

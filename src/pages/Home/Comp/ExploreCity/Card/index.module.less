@@ -8,10 +8,10 @@
 @FONT_COLOR: var(--font-color-lighter);
 @TITLE_FONT_WEIGHT: 800;
 @TEXT_FONT_WEIGHT: 500;
-@FONT_COLOR_HOVER: var(--default-font-color);
-@BORDER_COLOR_HOVER: var(--font-color-lighter);
-@FONT_COLOR_DISABLED: var(--font-disabled-color);
-@BACKGROUND_COLOR_DISABLED: var(--button-hover-background-color);
+@FONT_COLOR_HOVER: var(--default-font-color); // 滑入文本色
+@BORDER_COLOR_HOVER: var(--font-color-lighter); // 滑入边框色
+@FONT_COLOR_DISABLED: var(--font-disabled-color); // 文本禁止色
+@BACKGROUND_COLOR_DISABLED: var(--button-hover-background-color); // 背景禁止色
 
 .card {
   width: @CARD_WIDTH;
@@ -55,12 +55,7 @@
 
   &:hover {
     color: @FONT_COLOR_HOVER;
-    // 1. 字体颜色变深 (原逻辑)
-    // 2. 边框颜色变浅 (使用 rgba 实现比 font color 更淡的效果，或者使用特定的浅色变量)
-    // 假设 --default-border-color 是灰色，我们这里调浅一点
     border-color: @BORDER_COLOR_HOVER;
-
-    // 3. 增加边框阴影使其突出
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
     cursor: pointer;

@@ -1,0 +1,28 @@
+@TEXT_COLOR: var(--font-color-lighter);
+@FONT_SIZE: var(--font-size);
+@SIZE: var(--size);
+@PADDING: @SIZE calc(1.5 * @SIZE);
+
+.guideList {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  padding: @PADDING;
+  .title {
+    font-size: calc(2 * @FONT_SIZE);
+    margin: 0 0 calc(0.2 * @SIZE) 0;
+  }
+  .text {
+    color: @TEXT_COLOR;
+    margin-bottom: calc(0.6 * @SIZE);
+  }
+  .cardList {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: @SIZE;
+    > div {
+      width: calc((100% - @SIZE) / 2);
+    }
+  }
+}

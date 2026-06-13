@@ -1,21 +1,21 @@
 export enum NavBarActiveTabEnum {
   Home = 0,
   Clase = 1,
-  Bank = 2,
+  Guide = 2,
   AboutUs = 3,
 }
 
 export enum NavBarActiveTabPath {
   Home = "/",
   Clase = "/clase",
-  Bank = "/bank",
+  Guide = "/guideList",
   AboutUs = "/aboutUs",
 }
 
 export enum NavBarActiveTabName {
   Home = "nav.home",
   Clase = "nav.clase",
-  Bank = "nav.bank",
+  Guide = "nav.guide",
   AboutUs = "nav.aboutUs",
 }
 
@@ -31,9 +31,9 @@ export const NavBarList = [
     path: NavBarActiveTabPath.Clase,
   },
   {
-    key: "Bank",
-    name: NavBarActiveTabName.Bank,
-    path: NavBarActiveTabPath.Bank,
+    key: "Guide",
+    name: NavBarActiveTabName.Guide,
+    path: NavBarActiveTabPath.Guide,
   },
   // {
   //   key: "AboutUs",
