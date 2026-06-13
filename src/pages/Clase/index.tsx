@@ -1,6 +1,12 @@
 import React, { useState, useMemo } from "react";
 import { Avatar } from "antd";
-import { ClockCircleOutlined, UserOutlined, TeamOutlined, LeftOutlined, RightOutlined } from "@ant-design/icons";
+import {
+  ClockCircleOutlined,
+  UserOutlined,
+  TeamOutlined,
+  LeftOutlined,
+  RightOutlined,
+} from "@ant-design/icons";
 import { useTranslation } from "react-i18next";
 import styles from "./index.module.less";
 import { MOCK_CLASS_LIST } from "./indexMock";
@@ -39,23 +45,24 @@ export const Clase: React.FC = () => {
   return (
     <div className={styles.theaterWrapper}>
       <div className={styles.mainConsole}>
-        
         {/* 🚪 导航层：PC端是垂直侧边栏，移动端自动变身成顶部的“左右切页条” */}
         <div className={styles.sidebarMenu}>
           {/* 📱 仅在移动端渲染的左右切换控制面板 */}
           <div className={styles.mobilePager}>
-            <button 
-              onClick={handlePrev} 
+            <button
+              onClick={handlePrev}
               disabled={currentIndex === 0}
               className={styles.pagerArrow}
             >
               <LeftOutlined />
             </button>
             <div className={styles.pagerTitle}>
-              {currentRoom ? `${currentRoom.level} - ${currentRoom.room}` : ""}
+              {currentRoom
+                ? `${currentRoom.level} - ${currentRoom.room}`
+                : ""}
             </div>
-            <button 
-              onClick={handleNext} 
+            <button
+              onClick={handleNext}
               disabled={currentIndex === MOCK_CLASS_LIST.length - 1}
               className={styles.pagerArrow}
             >
@@ -84,7 +91,9 @@ export const Clase: React.FC = () => {
         {/* 📺 右侧核心主视窗 */}
         <div className={styles.stageViewport}>
           {!currentRoom ? (
-            <div className={styles.emptyStage}>No ongoing classes in this room</div>
+            <div className={styles.emptyStage}>
+              No ongoing classes in this room
+            </div>
           ) : (
             <div className={styles.roomContainer}>
               <div className={styles.stageHeader}>
@@ -104,7 +113,9 @@ export const Clase: React.FC = () => {
                         <span className={styles.timeTag}>
                           <ClockCircleOutlined /> {session.time}
                         </span>
-                        <span className={styles.teacherName}>{session.teacher}</span>
+                        <span className={styles.teacherName}>
+                          {session.teacher}
+                        </span>
                       </div>
 
                       <div className={styles.studentFlow}>
@@ -129,7 +140,6 @@ export const Clase: React.FC = () => {
             </div>
           )}
         </div>
-
       </div>
     </div>
   );

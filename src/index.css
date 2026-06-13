@@ -1,70 +1,74 @@
+/* index.css
+1. 颜色样式变量
+2. 字体样式变量
+3. 屏幕自适应的字体大小和宽度变量
+4. 全局配置
+*/
+
+@font-face {
+  font-family: "CustomFont";
+  /* 确保这里末尾直接是分号 ; 结束 */
+  src: url("./assets/fonts/CustomFont-Bold.woff2") format("woff2");
+  font-weight: 700; /* 注意：如果是 Bold 粗体文件，建议这里写 700 */
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  /* ==========================================
-     1. COLOR
-     ========================================== */
-  --light-blue: #3b82f6;
-  --dark-blue: #080a23;
-  --light-grey: #f5f5f5b8;
-  --mid-grey: #9ca3af;
-  --dark-grey: #1f2937;
-  --light-orange: #f59e0b;
-  --mid-orange: #ff6900;
-  --dark-orange: #da1818;
+  /* 1. 颜色样式变量 */
+  --default-boder-color: #dfdfdf; /* 默认边框灰色 */
+  --default-background-color: #fcfcfc; /* 默认背景灰色 */
+  --main-theme-color: #3fcf8e; /* 绿色主题色 */
+  /* 文本颜色 */
+  --default-font-color: #171717; /* 默认文本黑色 */
+  --font-color-lighter: #707070; /* 浅文本灰色 */
+  /* 按钮颜色 */
+  --button-text-color: #3fcf8e;
+  --button-background-color: #72e3ad;
+  --button-border-color: #16b674;
+  --border-color: #dfdfdf;
+  /* 2. 字体样式变量 */
+  --default-font-family:
+    "CustomFont", "Circular", "custom-font", "Helvetica Neue", Helvetica, Arial,
+    ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
 
-  /* ==========================================
-     2. FONT-FAMAILY
-     ========================================== */
-  --font-family-nav:
-    -apple-system, "system-ui", "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  --font-family-banner:
-    -apple-system, "system-ui", "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  --font-family-basic:
-    -apple-system, "system-ui", "Segoe UI", Roboto, "Helvetica Neue", Arial;
-
-  /* ==========================================
-     3. SIZE
-     ========================================== */
-  --basic-padding: 120px;
+  /* 3. 默认尺寸变量和自适应 */
+  --basic-size: 120px;
   --basic-font-size: 24px;
 
   @media (max-width: 1919px) and (min-width: 1441px) {
-    --basic-padding: 90px;
+    --basic-size: 90px;
     --basic-font-size: 22px;
   }
 
-  /* 💻 [1201px - 1440px] 标准笔记本电脑 (如 MacBook Pro 14, 常见15寸轻薄本) */
   @media (max-width: 1440px) and (min-width: 1201px) {
-    --basic-padding: 70px;
+    --basic-size: 70px;
     --basic-font-size: 19px;
   }
 
-  /* 📐 [1025px - 1200px] 小屏笔记本 / 横屏 iPad Pro */
   @media (max-width: 1200px) and (min-width: 1025px) {
-    --basic-padding: 50px;
+    --basic-size: 50px;
     --basic-font-size: 17px;
   }
 
-  /* [769px - 1024px] 平板电脑标准尺寸 (如 iPad / iPad Air 纵向) */
   @media (max-width: 1024px) and (min-width: 769px) {
-    --basic-padding: 35px;
+    --basic-size: 35px;
     --basic-font-size: 16px;
   }
 
-  /* 横屏手机 / 小平板 [481px - 768px] */
   @media (max-width: 768px) and (min-width: 481px) {
-    --basic-padding: 24px;
+    --basic-size: 24px;
     --basic-font-size: 14px;
   }
 
-  /* 大屏手机 [376px - 480px] (如 iPhone Max / Plus系列) */
   @media (max-width: 480px) and (min-width: 376px) {
-    --basic-padding: 16px;
+    --basic-size: 16px;
     --basic-font-size: 12px;
   }
 
-  /* 🪟 小屏手机 [< 375px] (如 iPhone SE / 迷你屏) */
   @media (max-width: 375px) {
-    --basic-padding: 12px;
+    --basic-size: 12px;
     --basic-font-size: 11px; /* 避免设为 10px，部分浏览器在 12px 以下会有强制渲染硬伤 */
   }
 }

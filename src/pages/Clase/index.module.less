@@ -1,6 +1,6 @@
 .theaterWrapper {
   box-sizing: border-box;
-  padding: calc(0.5 * var(--basic-padding)) var(--basic-padding);
+  padding: calc(0.5 * var(--basic-size)) var(--basic-size);
   display: flex;
   flex-direction: column;
   gap: calc(var(--basic-font-size) * 1);
@@ -69,17 +69,17 @@
 
     &:hover {
       background: var(--light-grey);
-      color: var(--light-blue);
+      color: var(--main-theme-color);
     }
   }
 
   .btnActive {
     background: rgba(59, 130, 246, 0.08) !important;
-    color: var(--light-blue) !important;
+    color: var(--main-theme-color) !important;
 
     .roomDot {
-      background: var(--light-blue);
-      box-shadow: 0 0 8px var(--light-blue);
+      background: var(--main-theme-color);
+      box-shadow: 0 0 8px var(--main-theme-color);
     }
   }
 }
@@ -166,7 +166,7 @@
 .sessionsGrid {
   display: flex;
   flex-direction: column;
-  gap: calc(0.4 * var(--basic-padding));
+  gap: calc(0.4 * var(--basic-size));
 }
 
 .sessionCard {
@@ -176,7 +176,7 @@
   background: #ffffff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
   border: 1px solid var(--light-grey);
-  border-left: 4px solid var(--light-blue);
+  border-left: 4px solid var(--main-theme-color);
 }
 
 .sessionTop {
@@ -233,19 +233,6 @@
   font-size: calc(var(--basic-font-size) * 0.85);
   text-align: center;
   padding: calc(var(--basic-font-size) * 4) 0;
-}
-
-.Gramática, .regular {
-  border-left-color: #3b82f6;
-  background: rgba(59, 130, 246, 0.02);
-}
-.Comunicación {
-  border-left-color: #22c55e;
-  background: rgba(34, 197, 94, 0.02);
-}
-.DELE {
-  border-left-color: var(--mid-orange, #f97316);
-  background: rgba(249, 115, 22, 0.02);
 }
 
 @keyframes fadeIn {

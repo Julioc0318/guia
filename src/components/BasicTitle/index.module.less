@@ -11,14 +11,15 @@
     object-position: center center;
     position: relative;
     display: block;
+    @media (max-width: 768px) {
+      aspect-ratio: 5 / 3;
+    }
   }
 
   .textArea {
     position: absolute;
     top: 40%;
-    transform: translateY(
-      -50%
-    );
+    transform: translateY(-50%);
 
     left: 0;
     right: 0;
@@ -26,7 +27,7 @@
     padding: 0 calc(var(--basic-font-size) * 1.5);
     box-sizing: border-box;
     @media (max-width: 768px) {
-      top: 55%;
+      top: 45%;
     }
 
     .title {
@@ -39,13 +40,17 @@
       letter-spacing: -0.02em;
       white-space: normal;
       z-index: 100;
+      /* 横屏手机 / 小平板 [481px - 768px] */
+      @media (max-width: 768px) and (min-width: 481px) {
+        font-size: calc(var(--basic-font-size) * 2.5);
+      }
 
-      @media (max-width: 768px) {
+      /* 大屏手机 [376px - 480px] (如 iPhone Max / Plus系列) */
+      @media (max-width: 480px) {
         font-size: calc(var(--basic-font-size) * 2);
       }
     }
-    
-    
+
     .desc {
       margin-top: calc(2 * var(--basic-font-size));
       font-weight: 500; // 比 lighter 更有精准控制力的细体
@@ -60,7 +65,13 @@
       white-space: pre-line;
       // -webkit-line-clamp: 2;            // 最多显示 2 行，超过 2 行自动变成省略号 ...
       // overflow: hidden;
-      @media (max-width: 768px) {
+      @media (max-width: 768px) and (min-width: 481px) {
+        margin-top: calc(var(--basic-font-size));
+        font-size: calc(var(--basic-font-size) * 1.2);
+      }
+
+      /* 大屏手机 [376px - 480px] (如 iPhone Max / Plus系列) */
+      @media (max-width: 480px) {
         margin-top: calc(var(--basic-font-size));
         font-size: calc(var(--basic-font-size) * 0.9);
       }

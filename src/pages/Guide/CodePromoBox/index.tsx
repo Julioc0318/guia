@@ -7,7 +7,7 @@ export const CodePromoBox = () => {
   return (
     <div className={styles.codePromoBox}>
       <div className={styles.codeLabel}>{t("guide.codeLabel")}</div>
-      <div className={styles.codeValue}>YOUR_CODE_HERE</div>
+      <div className={styles.codeValue}>15D00011148B54</div>
       <p className={styles.codeImportance}>{t("guide.codeImportance")}</p>
       <div className={styles.officialLinkWrapper}>
         <a

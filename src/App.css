@@ -1,40 +1,29 @@
-@import "./assets/styles/global.css";
+/* App.css
+1. 一些全局的页面样式配置。 
+*/
 
 .App {
   height: 100%;
+  line-height: 1.5;
+  border-color: var(--default-border-color);
+  font-family: var(--default-font-family);
+  background-color: var(--default-background-color);
 }
 
 a {
-  color: inherit; /* 👑 核心：继承父元素的字体颜色，不再是死板的蓝色 */
-  text-decoration: none; /* 👑 核心：去掉下划线 */
-  cursor: pointer; /* 确保鼠标放上去时依然显示“小手”形状 */
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
 
-  /* 彻底清除所有交互状态下的默认颜色变化 */
   &:link,
   &:visited,
   &:active,
   &:hover {
-    color: inherit; /* 无论点击前、点击后、按下时还是悬浮时，都继承父级颜色 */
-    text-decoration: none; /* 任何状态下都不显示下划线 */
+    color: inherit;
+    text-decoration: none;
   }
 
-  /* 现代网页的防触控/防聚焦高亮清除（可选） */
   &:focus {
-    outline: none; /* 去掉点击时的外边框（特别是在移动端或某些浏览器上） */
-  }
-}
-
-/* 精准控制：给需要禁用的容器（比如你的 .content 或 .bannerContent）加上这个类名 */
-.noSelect_XXX {
-  /* 👑 核心：禁止用户选中文字 */
-  -webkit-user-select: none; /* Safari */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* IE10+/Edge */
-  user-select: none; /* 标准语法（Chrome, Opera, Edge等） */
-
-  /* 额外附赠：禁止图片被拖拽（防止用户直接把网页图片拖到桌面上保存） */
-  img {
-    -webkit-user-drag: none;
-    pointer-events: none; /* 彻底让鼠标事件穿透图片，无法右键保存或拖拽 */
+    outline: none;
   }
 }

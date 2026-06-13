@@ -3,7 +3,7 @@
   box-sizing: border-box;
   z-index: 1000;
   background-color: var(--dark-blue);
-  padding: calc(var(--basic-padding) / 5) var(--basic-padding);
+  padding: calc(var(--basic-size) / 5) var(--basic-size);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11,7 +11,7 @@
   /* 横屏手机 / 小平板 [481px - 768px] */
   @media (max-width: 768px) {
     flex-direction: column;
-    padding: calc(var(--basic-padding) / 2) var(--basic-padding);
+    padding: calc(var(--basic-size) / 2) var(--basic-size);
   }
 
   .logo {
@@ -63,7 +63,7 @@
       }
 
       &:hover {
-        color: var(--light-blue);
+        color: var(--main-theme-color);
         background: white;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         text-shadow:
@@ -105,7 +105,7 @@
   box-sizing: border-box;
   z-index: 1000;
   background-color: var(--dark-blue);
-  padding: calc(var(--basic-padding) / 5) var(--basic-padding);
+  padding: calc(var(--basic-size) / 5) var(--basic-size);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -113,7 +113,7 @@
   /* 横屏手机 / 小平板 [481px - 768px] */
   @media (max-width: 768px) {
     flex-direction: column;
-    padding: calc(var(--basic-padding) / 2) var(--basic-padding);
+    padding: calc(var(--basic-size) / 2) var(--basic-size);
     gap: calc(var(--basic-font-size) * 1);
   }
 
@@ -164,7 +164,7 @@
       }
 
       &:hover {
-        color: var(--light-blue);
+        color: var(--main-theme-color);
         background: white;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         text-shadow:
@@ -199,7 +199,7 @@
         }
 
         .langTrigger {
-          color: var(--light-blue);
+          color: var(--main-theme-color);
           background: white;
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
           text-shadow: 0.3px 0 0 currentColor, -0.3px 0 0 currentColor;
@@ -275,7 +275,7 @@
 
         &:hover {
           background-color: white;
-          color: var(--light-blue);
+          color: var(--main-theme-color);
           text-shadow: 0.3px 0 0 currentColor, -0.3px 0 0 currentColor;
         }
 
