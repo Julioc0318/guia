@@ -18,7 +18,7 @@ export const Card = ({
   return (
     <div
       className={classNames([styles.card, disabled ? styles.disabled : null])}
-      onClick={!disabled && onClick}
+      onClick={disabled ? undefined : onClick}
     >
       <div className={styles.pic}>
         <img src={imgSrc} />
